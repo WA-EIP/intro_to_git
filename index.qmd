@@ -1,0 +1,90 @@
+---
+title: Intro to Git and GitHub🤖
+author: Frank Aragona & Juan Salazar 
+format: 
+    revealjs: 
+        theme: [default, styles.scss]
+        width: 1500
+revealjs-plugins:
+    - excalidraw
+knitr: true
+---
+
+
+## what is the problem
+
+<!-- ## Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
+
+-   multiple files with messy names (image of messy files)
+-   easy to lose track of production version
+
+## what is git? github?
+
+::: incremental
+-   git is version control
+-   **git -> movies**
+-   **github -> netflix**
+:::
+
+## benefits of github - code management
+
+\*could show the UI - show a quick demo
+
+## benefits of github - issue management
+
+\*could show the UI - show a quick demo
+
+## benefits of github - collaboration
+
+\*explain the mpox scenario
+
+## how to use github in practice
+
+::: panel-tabset
+### cloning
+
+- clone the GitHub repository to your local machine
+
+### pulling
+
+- pull the latest version of a branch
+
+### pushing
+
+- push your update to a branch
+
+:::
+
+## DOH-EPI-Coders
+
+::: incremental
+-   Our private DOH repos
+-   Can request for a license
+:::
+
+## 
+
+```{ojs}
+//| panel: sidebar 
+ viewof scan = Inputs.button([
+        ["Base Timeline", value => 1],
+        ["Top Language", value => 2],
+        ["Top 5 Repos", value => 3],
+        ["Size", value => 4]
+ ],
+        {value: 1, label: "Click Plot Type:"}
+);
+
+```
+
+{{< include _beeswarm_plot.qmd >}}
+
+## Examples of DOH-EPI-Coders
+
+## GitHub Actions
+
+## GitHub Pages
+
+## Release Cycles (show if time? advanced slide at end)
+
+##
