@@ -52,25 +52,46 @@ $link-color: $tertiary;
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import url('https://rsms.me/inter/inter.css');
 
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
 }
 
+$font-family-sans-serif: 'Atkinson Hyperlegible', sans-serif;
+
+
+
 
 
 /*-- scss:rules --*/
 
-:root {
-    --bs-body-font-family: inter;
-    --bs-body-font-size: 21px;
-  }
+// :root {
+//     --bs-body-font-family: 'Atkinson Hyperlegible';
+//     --bs-body-font-size: 21px;
+//   }
+
+//   .reveal h1, h2, h3, p {
+//     --bs-body-font-family: 'Atkinson Hyperlegible';
+//     --bs-body-font-size: 21px;
+//   }
 
 // remove the gap at the start of the page
 main {
 	margin-top: 0em;
 	margin-bottom: 1em;
+}
+
+.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  // font-family: JetBrains Mono;
+  font-size: 70px;
 }
 
 #title-block-header {

@@ -1,5 +1,5 @@
 ---
-title: Intro to Git and GitHub🤖
+title: Intro to Git and GitHub {{< iconify pajamas:gitea style="color:#48BDF3;">}}
 author: Frank Aragona & Juan Salazar 
 format: 
     revealjs: 
@@ -10,49 +10,86 @@ revealjs-plugins:
 knitr: true
 ---
 
-
 ## what is the problem
 
-<!-- ## Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
+<!-- # Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
 
 -   multiple files with messy names (image of messy files)
 -   easy to lose track of production version
+-   terrible for collaboration
+    -    who has the main script? 
+    -    who deleted my changes? 
+    -    conflicts?
 
-## what is git? github?
+## what is Git?
 
-::: incremental
--   git is version control
--   **git -> movies**
--   **github -> netflix**
+:::::: columns
+
+:::{.column .incremental}
+-   [Git](https://git-scm.com/) is version control software
+-   projects have branches
+-   create new branches to test code
+-   ability to switch between branches while keeping the `main` branch clean
 :::
 
-## benefits of github - code management
+::: column
+![](images/branch.png)
+:::
+
+::::::
+
+## what is GitHub?
+
+:::::: columns
+:::: column
+::: incremental
+-   [GitHub](https://github.com/) is a platform that hosts Git repositories
+-   code management
+-   project management
+-   it's where you collaborate
+-   helps with isolating _your_ changes from your main code
+:::
+::::
+
+::: column
+![](images/svn.svg)
+:::
+
+::::::
+
+## tl;dr
+
+::: {.v-center-container .incremental}
+-   Git repos {{< iconify pajamas:git style="color:#D0927D;" >}} -> **movies** 🎞️
+-   GitHub {{< iconify pajamas:github >}} -> **netflix** ☁️
+:::
+
+## benefits of GitHub - code management
 
 \*could show the UI - show a quick demo
 
-## benefits of github - issue management
+## benefits of GitHub - issue management
 
 \*could show the UI - show a quick demo
 
-## benefits of github - collaboration
+## benefits of GitHub - collaboration
 
 \*explain the mpox scenario
 
-## how to use github in practice
+## how to use GitHub in practice
 
 ::: panel-tabset
 ### cloning
 
-- clone the GitHub repository to your local machine
+-   clone the GitHub repository to your local machine
 
 ### pulling
 
-- pull the latest version of a branch
+-   pull the latest version of a branch
 
 ### pushing
 
-- push your update to a branch
-
+-   push your update to a branch
 :::
 
 ## DOH-EPI-Coders
@@ -60,6 +97,7 @@ knitr: true
 ::: incremental
 -   Our private DOH repos
 -   Can request for a license
+-   Teams channels for Q/A and discussions
 :::
 
 ## 
