@@ -120,26 +120,11 @@ main {
     color: blue;
   } 
 
-// color for highlight style
-// pre code {
-//   padding-left: 5%;
-// }
 
 pre code.sourceCode {
   padding-left: 0;
   font-family: "JetBrains Mono", monospace;
 }
-
-// .downlit code a:any-link {
-//   text-decoration: underline;
-//   text-decoration-color: $purple;
-// }
-
-// div.sourceCode {
-//   background-color: rgba(192, 192, 192, 0.842);
-//   border: 1px solid rgba(192,192,192,.842);
-//   border-radius: .25rem;
-// }
 
 // Output colors
 .watch {
@@ -157,14 +142,6 @@ pre code.sourceCode {
   width: 400px;
   /*margin: auto !important;*/
   
-}
-
-.winder {
-    padding: 64px;
-    padding-top: 64px;
-    padding-right: 64px;
-    padding-bottom: 64px;
-    padding-left: 64px;
 }
 
 .medframe {
@@ -204,3 +181,15 @@ pre code.sourceCode {
     padding: 5px;
 }
 
+// box around splash options
+.box {
+  border-radius: 5px;
+  // box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+  padding: 30px;
+  margin: 20px; 
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  font-family: 'JetBrains Mono';
+  font-size: 20px;
+}

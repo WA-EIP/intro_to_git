@@ -10,16 +10,37 @@ revealjs-plugins:
 knitr: true
 ---
 
-## what is the problem
+## the problem
 
-<!-- # Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
+::::{.columns}
 
--   multiple files with messy names (image of messy files)
+:::{.column .incremental}
+-   multiple files for the same script
 -   easy to lose track of production version
 -   terrible for collaboration
     -    who has the main script? 
     -    who deleted my changes? 
     -    conflicts?
+    -    I overwrote my code and lost everything {{< iconify twemoji:melting-face >}} 
+:::
+
+:::{.column}
+
+:::{.box}
+{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_datatable_conversion.R
+
+{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_datatable_conversion_local.R
+
+{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_updated.R
+
+{{< iconify vscode-icons:file-type-rproj >}} 2021223_AllTests_dplyr_FA.R
+
+{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_dplyr_conversion_JS.R
+:::
+
+:::
+
+::::
 
 ## what is Git?
 
@@ -29,7 +50,9 @@ knitr: true
 -   [Git](https://git-scm.com/) is version control software
 -   projects have branches
 -   create new branches to test code
--   ability to switch between branches while keeping the `main` branch clean
+-   isolate while keeping the `main` branch clean
+-   transparent, keeps track of _everything_
+-   prevents overwriting/losing your changes
 :::
 
 ::: column
@@ -48,6 +71,7 @@ knitr: true
 -   project management
 -   it's where you collaborate
 -   helps with isolating _your_ changes from your main code
+-   transparent, helps see _everything_
 :::
 ::::
 
@@ -61,35 +85,142 @@ knitr: true
 
 ::: {.v-center-container .incremental}
 -   Git repos {{< iconify pajamas:git style="color:#D0927D;" >}} -> **movies** 🎞️
--   GitHub {{< iconify pajamas:github >}} -> **netflix** ☁️
+-   GitHub {{< iconify pajamas:github >}} -> **Netflix** ☁️
 :::
 
-## benefits of GitHub - code management
+:::{.notes}
+- With Git, it's like you and your teammate want to edit the same scene. 
+You want to do it in isolation so that _your_ edits don't overwrite _their_ edits
 
-\*could show the UI - show a quick demo
+- When you're finished, you can take parts that you like from _your_ work 
+and combine it with the parts from your _teammates_ work, all while keeping track of ALL the changes,
+even the changes that didn't make the final cut.
 
-## benefits of GitHub - issue management
+- Then, when you and your teammate have a combined final edit, you can **push** the product into your movie
 
-\*could show the UI - show a quick demo
+- GitHub is like Netflix - That's where your movie and all the historical changes can be watched or pulled
 
-## benefits of GitHub - collaboration
+- This isn't the best analogy because there is a lot more that GitHub does
 
-\*explain the mpox scenario
+:::
+
+
+## benefits of Git/GitHub - code management
+
+::::{.columns}
+
+:::{.column .incremental}
+-   **transparency:** view the entire history of your code
+-   **time travel:** roll back to previous versions 
+-   **organization:** clear division of production and development
+:::
+
+:::{.column}
+![](images/code_change.png)
+:::
+
+::::
+
+## benefits of Git/GitHub - project management
+
+::::{.columns}
+
+:::{.column .incremental}
+-   **transparency:** track all conversations and decisions
+-   **organization:** easy to tag and search tasks
+-   can use like smartsheet
+-   auto links tasks to your code
+:::
+
+:::{.column}
+![](images/issues.png)
+:::
+
+::::
+
+
+## what do we use it for
+
+-   all code development
+-   single user or collaborative work
+
 
 ## how to use GitHub in practice
 
 ::: panel-tabset
-### cloning
 
--   clone the GitHub repository to your local machine
+### 1. clone
 
-### pulling
+
+::::{.columns}
+
+:::{.column }
+-   clone: copy the whole repo to a folder on your laptop
+:::
+
+:::{.column}
+![](images/OpenwGitHubDesktop.png)
+:::
+
+::::
+
+### 2. create a branch
+
+::::{.columns}
+
+:::{.column}
+
+-   make your own branch 
+-   keep the main branch clean
+
+:::
+
+:::{.column}
+![](images/create_branch.gif)
+:::
+
+::::
+
+
+### 3. commit 
+
+::::{.columns}
+
+:::{.column}
+-   write code like normal
+-   save, and **commit** code to branch
+-   commits are changes stored in the branch
+-   make small, frequent commits if possible
+:::
+
+:::{.column}
+![](images/issues.png)
+:::
+
+::::
+
+### 4. push
+
+::::{.columns}
+
+:::{.column}
+-   after you save and commit,
+-   **push** branch to GitHub
+-   like taking your local changes and _pushing_ them to GitHub where your team can see the changes
+:::
+
+:::{.column}
+![](images/issues.png)
+:::
+
+::::
+
+### pull
 
 -   pull the latest version of a branch
+-   it will _pull_ the latest changes your teammates made into your local clone
+-   should pull regularly throughout the process
 
-### pushing
-
--   push your update to a branch
 :::
 
 ## DOH-EPI-Coders
@@ -119,10 +250,9 @@ knitr: true
 
 ## Examples of DOH-EPI-Coders
 
-## GitHub Actions
 
 ## GitHub Pages
 
-## Release Cycles (show if time? advanced slide at end)
-
-##
+-   GitHub can host static webpages for free
+-   Works well with Quarto and Rmarkdown
+-   
