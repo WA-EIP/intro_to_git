@@ -6,11 +6,12 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Frank Aragona &amp; Juan Salazar">
-  <title>Intro to Git and GitHub🤖</title>
+  <title>Intro to Git and GitHub </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -94,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-736bb9f5f75bb6b16257770ef668a932.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-45ecfefe60d17cbd46e3d5234b48bb9f.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,7 +196,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Intro to Git and GitHub🤖</h1>
+  <h1 class="title">Intro to Git and GitHub <iconify-icon role="img" inline="" icon="pajamas:gitea" style="color:#48BDF3;" aria-label="Icon gitea from pajamas Iconify.design set." title="Icon gitea from pajamas Iconify.design set."></iconify-icon></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,36 +209,72 @@ Frank Aragona &amp; Juan Salazar
 </section>
 <section id="what-is-the-problem" class="slide level2">
 <h2>what is the problem</h2>
-<!-- ## Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
+<!-- # Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
 <ul>
 <li>multiple files with messy names (image of messy files)</li>
 <li>easy to lose track of production version</li>
+<li>terrible for collaboration
+<ul>
+<li>who has the main script?</li>
+<li>who deleted my changes?</li>
+<li>conflicts?</li>
+</ul></li>
 </ul>
 </section>
-<section id="what-is-git-github" class="slide level2">
-<h2>what is git? github?</h2>
+<section id="what-is-git" class="slide level2">
+<h2>what is Git?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><a href="https://git-scm.com/">Git</a> is version control software</li>
+<li class="fragment">projects have branches</li>
+<li class="fragment">create new branches to test code</li>
+<li class="fragment">ability to switch between branches while keeping the <code>main</code> branch clean</li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/branch.png"></p>
+</div></div>
+</section>
+<section id="what-is-github" class="slide level2">
+<h2>what is GitHub?</h2>
+<div class="columns">
+<div class="column">
 <div>
 <ul>
-<li class="fragment">git is version control</li>
-<li class="fragment"><strong>git -&gt; movies</strong></li>
-<li class="fragment"><strong>github -&gt; netflix</strong></li>
+<li class="fragment"><a href="https://github.com/">GitHub</a> is a platform that hosts Git repositories</li>
+<li class="fragment">code management</li>
+<li class="fragment">project management</li>
+<li class="fragment">it’s where you collaborate</li>
+<li class="fragment">helps with isolating <em>your</em> changes from your main code</li>
+</ul>
+</div>
+</div><div class="column">
+<p><img data-src="images/svn.svg"></p>
+</div></div>
+</section>
+<section id="tldr" class="slide level2">
+<h2>tl;dr</h2>
+<div class="v-center-container">
+<ul>
+<li class="fragment">Git repos <iconify-icon role="img" inline="" icon="pajamas:git" style="color:#D0927D;" aria-label="Icon git from pajamas Iconify.design set." title="Icon git from pajamas Iconify.design set."></iconify-icon> -&gt; <strong>movies</strong> 🎞️</li>
+<li class="fragment">GitHub <iconify-icon role="img" inline="" icon="pajamas:github" aria-label="Icon github from pajamas Iconify.design set." title="Icon github from pajamas Iconify.design set."></iconify-icon> -&gt; <strong>netflix</strong> ☁️</li>
 </ul>
 </div>
 </section>
 <section id="benefits-of-github---code-management" class="slide level2">
-<h2>benefits of github - code management</h2>
+<h2>benefits of GitHub - code management</h2>
 <p>*could show the UI - show a quick demo</p>
 </section>
 <section id="benefits-of-github---issue-management" class="slide level2">
-<h2>benefits of github - issue management</h2>
+<h2>benefits of GitHub - issue management</h2>
 <p>*could show the UI - show a quick demo</p>
 </section>
 <section id="benefits-of-github---collaboration" class="slide level2">
-<h2>benefits of github - collaboration</h2>
+<h2>benefits of GitHub - collaboration</h2>
 <p>*explain the mpox scenario</p>
 </section>
 <section id="how-to-use-github-in-practice" class="slide level2">
-<h2>how to use github in practice</h2>
+<h2>how to use GitHub in practice</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">cloning</a></li><li><a href="#tabset-1-2">pulling</a></li><li><a href="#tabset-1-3">pushing</a></li></ul>
 <div class="tab-content">
@@ -265,6 +302,7 @@ Frank Aragona &amp; Juan Salazar
 <ul>
 <li class="fragment">Our private DOH repos</li>
 <li class="fragment">Can request for a license</li>
+<li class="fragment">Teams channels for Q/A and discussions</li>
 </ul>
 </div>
 </section>
@@ -272,14 +310,14 @@ Frank Aragona &amp; Juan Salazar
 <h2></h2>
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="68" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 67;"><span id="cb1-68"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb1-69"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-70"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
-<span id="cb1-71"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb1-72"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb1-73"><a href=""></a> ]<span class="op">,</span></span>
-<span id="cb1-74"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
-<span id="cb1-75"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="106" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 105;"><span id="cb1-106"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb1-107"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-108"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-109"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb1-110"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb1-111"><a href=""></a> ]<span class="op">,</span></span>
+<span id="cb1-112"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
+<span id="cb1-113"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
