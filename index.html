@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-45ecfefe60d17cbd46e3d5234b48bb9f.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-13fbf8dca31cbb3f05a8bdf25c06552a.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -207,19 +207,30 @@ Frank Aragona &amp; Juan Salazar
 </div>
 
 </section>
-<section id="what-is-the-problem" class="slide level2">
-<h2>what is the problem</h2>
-<!-- # Intro to Git & GitHub ![](images/water-wave.png){style="position: relative; top: 10px;" width="40"} -->
+<section id="the-problem" class="slide level2">
+<h2>the problem</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li>multiple files with messy names (image of messy files)</li>
-<li>easy to lose track of production version</li>
-<li>terrible for collaboration
+<li class="fragment">multiple files for the same script</li>
+<li class="fragment">easy to lose track of production version</li>
+<li class="fragment">terrible for collaboration
 <ul>
-<li>who has the main script?</li>
-<li>who deleted my changes?</li>
-<li>conflicts?</li>
+<li class="fragment">who has the main script?</li>
+<li class="fragment">who deleted my changes?</li>
+<li class="fragment">conflicts?</li>
+<li class="fragment">I overwrote my code and lost everything <iconify-icon role="img" inline="" icon="twemoji:melting-face" aria-label="Icon melting-face from twemoji Iconify.design set." title="Icon melting-face from twemoji Iconify.design set."></iconify-icon></li>
 </ul></li>
 </ul>
+</div><div class="column">
+<div class="box">
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_datatable_conversion.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_datatable_conversion_local.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_updated.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021223_AllTests_dplyr_FA.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_dplyr_conversion_JS.R</p>
+</div>
+</div></div>
 </section>
 <section id="what-is-git" class="slide level2">
 <h2>what is Git?</h2>
@@ -229,7 +240,9 @@ Frank Aragona &amp; Juan Salazar
 <li class="fragment"><a href="https://git-scm.com/">Git</a> is version control software</li>
 <li class="fragment">projects have branches</li>
 <li class="fragment">create new branches to test code</li>
-<li class="fragment">ability to switch between branches while keeping the <code>main</code> branch clean</li>
+<li class="fragment">isolate while keeping the <code>main</code> branch clean</li>
+<li class="fragment">transparent, keeps track of <em>everything</em></li>
+<li class="fragment">prevents overwriting/losing your changes</li>
 </ul>
 </div><div class="column">
 <p><img data-src="images/branch.png"></p>
@@ -246,6 +259,7 @@ Frank Aragona &amp; Juan Salazar
 <li class="fragment">project management</li>
 <li class="fragment">it’s where you collaborate</li>
 <li class="fragment">helps with isolating <em>your</em> changes from your main code</li>
+<li class="fragment">transparent, helps see <em>everything</em></li>
 </ul>
 </div>
 </div><div class="column">
@@ -257,40 +271,119 @@ Frank Aragona &amp; Juan Salazar
 <div class="v-center-container">
 <ul>
 <li class="fragment">Git repos <iconify-icon role="img" inline="" icon="pajamas:git" style="color:#D0927D;" aria-label="Icon git from pajamas Iconify.design set." title="Icon git from pajamas Iconify.design set."></iconify-icon> -&gt; <strong>movies</strong> 🎞️</li>
-<li class="fragment">GitHub <iconify-icon role="img" inline="" icon="pajamas:github" aria-label="Icon github from pajamas Iconify.design set." title="Icon github from pajamas Iconify.design set."></iconify-icon> -&gt; <strong>netflix</strong> ☁️</li>
+<li class="fragment">GitHub <iconify-icon role="img" inline="" icon="pajamas:github" aria-label="Icon github from pajamas Iconify.design set." title="Icon github from pajamas Iconify.design set."></iconify-icon> -&gt; <strong>Netflix</strong> ☁️</li>
 </ul>
 </div>
+<aside class="notes">
+<ul>
+<li><p>With Git, it’s like you and your teammate want to edit the same scene. You want to do it in isolation so that <em>your</em> edits don’t overwrite <em>their</em> edits</p></li>
+<li><p>When you’re finished, you can take parts that you like from <em>your</em> work and combine it with the parts from your <em>teammates</em> work, all while keeping track of ALL the changes, even the changes that didn’t make the final cut.</p></li>
+<li><p>Then, when you and your teammate have a combined final edit, you can <strong>push</strong> the product into your movie</p></li>
+<li><p>GitHub is like Netflix - That’s where your movie and all the historical changes can be watched or pulled</p></li>
+<li><p>This isn’t the best analogy because there is a lot more that GitHub does</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="benefits-of-github---code-management" class="slide level2">
-<h2>benefits of GitHub - code management</h2>
-<p>*could show the UI - show a quick demo</p>
+<section id="benefits-of-gitgithub---code-management" class="slide level2">
+<h2>benefits of Git/GitHub - code management</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><strong>transparency:</strong> view the entire history of your code</li>
+<li class="fragment"><strong>time travel:</strong> roll back to previous versions</li>
+<li class="fragment"><strong>organization:</strong> clear division of production and development</li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/code_change.png"></p>
+</div></div>
 </section>
-<section id="benefits-of-github---issue-management" class="slide level2">
-<h2>benefits of GitHub - issue management</h2>
-<p>*could show the UI - show a quick demo</p>
+<section id="benefits-of-gitgithub---project-management" class="slide level2">
+<h2>benefits of Git/GitHub - project management</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><strong>transparency:</strong> track all conversations and decisions</li>
+<li class="fragment"><strong>organization:</strong> easy to tag and search tasks</li>
+<li class="fragment">can use like smartsheet</li>
+<li class="fragment">auto links tasks to your code</li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/issues.png"></p>
+</div></div>
 </section>
-<section id="benefits-of-github---collaboration" class="slide level2">
-<h2>benefits of GitHub - collaboration</h2>
-<p>*explain the mpox scenario</p>
+<section id="what-do-we-use-it-for" class="slide level2">
+<h2>what do we use it for</h2>
+<ul>
+<li>all code development</li>
+<li>single user or collaborative work</li>
+</ul>
 </section>
 <section id="how-to-use-github-in-practice" class="slide level2">
 <h2>how to use GitHub in practice</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">cloning</a></li><li><a href="#tabset-1-2">pulling</a></li><li><a href="#tabset-1-3">pushing</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1. clone</a></li><li><a href="#tabset-1-2">2. create a branch</a></li><li><a href="#tabset-1-3">3. commit</a></li><li><a href="#tabset-1-4">4. push</a></li><li><a href="#tabset-1-5">pull</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
+<div class="columns">
+<div class="column">
 <ul>
-<li>clone the GitHub repository to your local machine</li>
+<li>clone: copy the whole repo to a folder on your laptop</li>
 </ul>
+</div><div class="column">
+<p><img data-src="images/OpenwGitHubDesktop.png"></p>
+</div></div>
 </div>
 <div id="tabset-1-2">
+<div class="columns">
+<div class="column">
 <ul>
-<li>pull the latest version of a branch</li>
+<li>make your own branch</li>
+<li>keep the main branch clean</li>
 </ul>
+</div><div class="column">
+<p><img data-src="images/create_branch.gif"></p>
+</div></div>
 </div>
 <div id="tabset-1-3">
+<div class="columns">
+<div class="column">
 <ul>
-<li>push your update to a branch</li>
+<li>write code like normal</li>
+<li>save, and <strong>commit</strong> code to branch</li>
+<li>commits are changes stored in the branch</li>
+<li>make small, frequent commits if possible</li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/issues.png"></p>
+</div></div>
+</div>
+<div id="tabset-1-4">
+<div class="columns">
+<div class="column">
+<ul>
+<li>after you save and commit,</li>
+<li><strong>push</strong> branch to GitHub</li>
+<li>like taking your local changes and <em>pushing</em> them to GitHub where your team can see the changes</li>
+</ul>
+</div><div class="column">
+<p><img data-src="images/issues.png"></p>
+</div></div>
+</div>
+<div id="tabset-1-5">
+<ul>
+<li>pull the latest version of a branch</li>
+<li>it will <em>pull</em> the latest changes your teammates made into your local clone</li>
+<li>should pull regularly throughout the process</li>
 </ul>
 </div>
 </div>
@@ -310,14 +403,14 @@ Frank Aragona &amp; Juan Salazar
 <h2></h2>
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="106" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 105;"><span id="cb1-106"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb1-107"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-108"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
-<span id="cb1-109"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb1-110"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb1-111"><a href=""></a> ]<span class="op">,</span></span>
-<span id="cb1-112"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
-<span id="cb1-113"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="237" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 236;"><span id="cb1-237"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb1-238"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-239"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-240"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb1-241"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb1-242"><a href=""></a> ]<span class="op">,</span></span>
+<span id="cb1-243"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
+<span id="cb1-244"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -627,17 +720,13 @@ Frank Aragona &amp; Juan Salazar
 <section id="examples-of-doh-epi-coders" class="slide level2">
 <h2>Examples of DOH-EPI-Coders</h2>
 </section>
-<section id="github-actions" class="slide level2">
-<h2>GitHub Actions</h2>
-</section>
 <section id="github-pages" class="slide level2">
 <h2>GitHub Pages</h2>
-</section>
-<section id="release-cycles-show-if-time-advanced-slide-at-end" class="slide level2">
-<h2>Release Cycles (show if time? advanced slide at end)</h2>
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
+<ul>
+<li>GitHub can host static webpages for free</li>
+<li>Works well with Quarto and Rmarkdown</li>
+<li></li>
+</ul>
 
 </section>
     </div>
