@@ -42,6 +42,16 @@ knitr: true
 
 ::::
 
+:::{.notes}
+- We've probably all been in this scenario where we have multiple versions of the same R script 
+- there are multiple files, each with slightly different names
+- nobody remembers what each file really contains or how they differ,
+- and it creates a chaotic environment where we don't know what the source of _truth_ is
+
+- so we lose track of production versions,
+- and it's terrible for collaboration
+:::
+
 ## what is Git?
 
 :::::: columns
@@ -60,6 +70,17 @@ knitr: true
 :::
 
 ::::::
+
+:::{.notes}
+- Teams often try to develop their own standards to control script versions,
+- but there is no better management system than Git. It has become the software industry's standard for good reason
+
+- Git is version control software that lets you isolate your _source of truth_ code from your development code 
+- projects have branches; in this figure you can see a main branch that holds the _production_ or _source of truth_ code
+- if someone wants to edit, they can make an isolated copy, or branch, of that source.
+- It's transparent - it lets you see the entire history of your code base
+- and prevents accidental overwrites of your code
+:::
 
 ## what is GitHub?
 
@@ -81,6 +102,15 @@ knitr: true
 
 ::::::
 
+:::{.notes}
+- GitHub is a platform that hosts your Git repository, or Git Project
+- the figure on the right shows a Git repo. Each team member can make a clone, or copy, of the repo and work on _isolated_ changes to the code 
+- It's kinda like the UI for Git management
+- it's good for code management, project management
+- it's where you will collaborate and discuss code changes
+- and it lets you visualize the Git history
+:::
+
 ## tl;dr
 
 ::: {.v-center-container .incremental}
@@ -89,23 +119,22 @@ knitr: true
 :::
 
 :::{.notes}
-- With Git, it's like you and your teammate want to edit the same scene. 
-You want to do it in isolation so that _your_ edits don't overwrite _their_ edits
 
-- When you're finished, you can take parts that you like from _your_ work 
-and combine it with the parts from your _teammates_ work, all while keeping track of ALL the changes,
-even the changes that didn't make the final cut.
+- Git repositories, or projects, are like movies
+- GitHub is like Netflix - it stores all your movies
 
-- Then, when you and your teammate have a combined final edit, you can **push** the product into your movie
+- Imagine your team wants to edit scenes in a movie
+- Git allows your team to make edits to the scenes and keeps track of all the changes that were made
+- It also helps to prevent conflicts between your scene edits and your teammates edits.
 
-- GitHub is like Netflix - That's where your movie and all the historical changes can be watched or pulled
 
+- When you want to work on a project, you can pull the movie from Netflix and work on scene edits in isolation
 - This isn't the best analogy because there is a lot more that GitHub does
 
 :::
 
 
-## benefits of Git/GitHub - code management
+## benefits of Git - code management
 
 ::::{.columns}
 
@@ -121,15 +150,15 @@ even the changes that didn't make the final cut.
 
 ::::
 
-## benefits of Git/GitHub - project management
+## benefits of GitHub - project management
 
 ::::{.columns}
 
 :::{.column .incremental}
 -   **transparency:** track all conversations and decisions
 -   **organization:** easy to tag and search tasks
--   can use like smartsheet
--   auto links tasks to your code
+    -    can use like smartsheet
+    -    auto links tasks to your code
 :::
 
 :::{.column}
@@ -142,10 +171,12 @@ even the changes that didn't make the final cut.
 ## what do we use it for
 
 -   all code development
--   single user or collaborative work
+-   single 'one-off' scripts
+-   big collaborative projects
+-   whenever we need to share code
 
 
-## how to use GitHub in practice
+## how to use Git/GitHub in practice
 
 ::: panel-tabset
 
@@ -155,7 +186,8 @@ even the changes that didn't make the final cut.
 ::::{.columns}
 
 :::{.column }
--   clone: copy the whole repo to a folder on your laptop
+-   find a repo in GitHub
+-   clone the repo: copy the whole repo to a folder on your laptop
 :::
 
 :::{.column}
@@ -170,8 +202,8 @@ even the changes that didn't make the final cut.
 
 :::{.column}
 
--   make your own branch 
--   keep the main branch clean
+-   make your own branch for your isolated edits
+-   keeps the main branch clean
 
 :::
 
@@ -248,11 +280,47 @@ even the changes that didn't make the final cut.
 
 {{< include _beeswarm_plot.qmd >}}
 
-## Examples of DOH-EPI-Coders
+## Examples 
 
+- scripts to create data files ([lineage classifications](https://github.com/NW-PaGe/lineage_classifications))
+- [data processing scripts](https://github.com/WAState-DeptHEALTH/COVID-Data-Quality)
 
 ## GitHub Pages
 
 -   GitHub can host static webpages for free
 -   Works well with Quarto and Rmarkdown
--   
+
+##
+
+::: {layout-ncol="2"}
+### Python Packages
+
+```{=html}
+<iframe width="600" height="550" src="https://nw-page.github.io/wadoh_raccoon/" title="Quarto Documentation" class="myframe2"></iframe>
+```
+### ELR Documentation
+
+```{=html}
+<iframe width="600" height="550" src="https://nw-page.github.io/covid_seq_elr/" title="Quarto Documentation" class="myframe2"></iframe>
+```
+:::
+
+## 
+
+::: {layout-ncol="2"}
+### Reports
+
+```{=html}
+<iframe width="600" height="550" src="https://nw-page.github.io/BacterialGenomicsSummaryOutput/" title="Quarto Documentation" class="myframe2"></iframe>
+```
+### Publications
+
+```{=html}
+<iframe width="600" height="550" src="https://nw-page.github.io/sequencing_integration_pipeline1.0/" title="Quarto Documentation" class="myframe2"></iframe>
+```
+:::
+
+## Resources
+
+- [DOH GitHub Policies](https://nw-page.github.io/standards/gh/)
+- Internal Sharepoint Docs (ask for links) 
