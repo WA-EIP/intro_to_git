@@ -231,6 +231,26 @@ Frank Aragona &amp; Juan Salazar
 <p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_dplyr_conversion_JS.R</p>
 </div>
 </div></div>
+<aside class="notes">
+<ul>
+<li><p>We’ve probably all been in this scenario where we have multiple versions of the same R script</p></li>
+<li><p>there are multiple files, each with slightly different names</p></li>
+<li><p>nobody remembers what each file really contains or how they differ,</p></li>
+<li><p>and it creates a chaotic environment where we don’t know what the source of <em>truth</em> is</p></li>
+<li><p>so we lose track of production versions,</p></li>
+<li><p>and it’s terrible for collaboration</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="what-is-git" class="slide level2">
 <h2>what is Git?</h2>
@@ -247,6 +267,27 @@ Frank Aragona &amp; Juan Salazar
 </div><div class="column">
 <p><img data-src="images/branch.png"></p>
 </div></div>
+<aside class="notes">
+<ul>
+<li><p>Teams often try to develop their own standards to control script versions,</p></li>
+<li><p>but there is no better management system than Git. It has become the software industry’s standard for good reason</p></li>
+<li><p>Git is version control software that lets you isolate your <em>source of truth</em> code from your development code</p></li>
+<li><p>projects have branches; in this figure you can see a main branch that holds the <em>production</em> or <em>source of truth</em> code</p></li>
+<li><p>if someone wants to edit, they can make an isolated copy, or branch, of that source.</p></li>
+<li><p>It’s transparent - it lets you see the entire history of your code base</p></li>
+<li><p>and prevents accidental overwrites of your code</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="what-is-github" class="slide level2">
 <h2>what is GitHub?</h2>
@@ -265,6 +306,26 @@ Frank Aragona &amp; Juan Salazar
 </div><div class="column">
 <p><img data-src="images/svn.svg"></p>
 </div></div>
+<aside class="notes">
+<ul>
+<li>GitHub is a platform that hosts your Git repository, or Git Project</li>
+<li>the figure on the right shows a Git repo. Each team member can make a clone, or copy, of the repo and work on <em>isolated</em> changes to the code</li>
+<li>It’s kinda like the UI for Git management</li>
+<li>it’s good for code management, project management</li>
+<li>it’s where you will collaborate and discuss code changes</li>
+<li>and it lets you visualize the Git history</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="tldr" class="slide level2">
 <h2>tl;dr</h2>
@@ -276,10 +337,12 @@ Frank Aragona &amp; Juan Salazar
 </div>
 <aside class="notes">
 <ul>
-<li><p>With Git, it’s like you and your teammate want to edit the same scene. You want to do it in isolation so that <em>your</em> edits don’t overwrite <em>their</em> edits</p></li>
-<li><p>When you’re finished, you can take parts that you like from <em>your</em> work and combine it with the parts from your <em>teammates</em> work, all while keeping track of ALL the changes, even the changes that didn’t make the final cut.</p></li>
-<li><p>Then, when you and your teammate have a combined final edit, you can <strong>push</strong> the product into your movie</p></li>
-<li><p>GitHub is like Netflix - That’s where your movie and all the historical changes can be watched or pulled</p></li>
+<li><p>Git repositories, or projects, are like movies</p></li>
+<li><p>GitHub is like Netflix - it stores all your movies</p></li>
+<li><p>Imagine your team wants to edit scenes in a movie</p></li>
+<li><p>Git allows your team to make edits to the scenes and keeps track of all the changes that were made</p></li>
+<li><p>It also helps to prevent conflicts between your scene edits and your teammates edits.</p></li>
+<li><p>When you want to work on a project, you can pull the movie from Netflix and work on scene edits in isolation</p></li>
 <li><p>This isn’t the best analogy because there is a lot more that GitHub does</p></li>
 </ul>
 <style type="text/css">
@@ -294,8 +357,8 @@ Frank Aragona &amp; Juan Salazar
           display:block!important;
       }</style></aside>
 </section>
-<section id="benefits-of-gitgithub---code-management" class="slide level2">
-<h2>benefits of Git/GitHub - code management</h2>
+<section id="benefits-of-git---code-management" class="slide level2">
+<h2>benefits of Git - code management</h2>
 <div class="columns">
 <div class="column">
 <ul>
@@ -307,15 +370,17 @@ Frank Aragona &amp; Juan Salazar
 <p><img data-src="images/code_change.png"></p>
 </div></div>
 </section>
-<section id="benefits-of-gitgithub---project-management" class="slide level2">
-<h2>benefits of Git/GitHub - project management</h2>
+<section id="benefits-of-github---project-management" class="slide level2">
+<h2>benefits of GitHub - project management</h2>
 <div class="columns">
 <div class="column">
 <ul>
 <li class="fragment"><strong>transparency:</strong> track all conversations and decisions</li>
-<li class="fragment"><strong>organization:</strong> easy to tag and search tasks</li>
+<li class="fragment"><strong>organization:</strong> easy to tag and search tasks
+<ul>
 <li class="fragment">can use like smartsheet</li>
 <li class="fragment">auto links tasks to your code</li>
+</ul></li>
 </ul>
 </div><div class="column">
 <p><img data-src="images/issues.png"></p>
@@ -325,11 +390,13 @@ Frank Aragona &amp; Juan Salazar
 <h2>what do we use it for</h2>
 <ul>
 <li>all code development</li>
-<li>single user or collaborative work</li>
+<li>single ‘one-off’ scripts</li>
+<li>big collaborative projects</li>
+<li>whenever we need to share code</li>
 </ul>
 </section>
-<section id="how-to-use-github-in-practice" class="slide level2">
-<h2>how to use GitHub in practice</h2>
+<section id="how-to-use-gitgithub-in-practice" class="slide level2">
+<h2>how to use Git/GitHub in practice</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1. clone</a></li><li><a href="#tabset-1-2">2. create a branch</a></li><li><a href="#tabset-1-3">3. commit</a></li><li><a href="#tabset-1-4">4. push</a></li><li><a href="#tabset-1-5">pull</a></li></ul>
 <div class="tab-content">
@@ -337,7 +404,8 @@ Frank Aragona &amp; Juan Salazar
 <div class="columns">
 <div class="column">
 <ul>
-<li>clone: copy the whole repo to a folder on your laptop</li>
+<li>find a repo in GitHub</li>
+<li>clone the repo: copy the whole repo to a folder on your laptop</li>
 </ul>
 </div><div class="column">
 <p><img data-src="images/OpenwGitHubDesktop.png"></p>
@@ -347,8 +415,8 @@ Frank Aragona &amp; Juan Salazar
 <div class="columns">
 <div class="column">
 <ul>
-<li>make your own branch</li>
-<li>keep the main branch clean</li>
+<li>make your own branch for your isolated edits</li>
+<li>keeps the main branch clean</li>
 </ul>
 </div><div class="column">
 <p><img data-src="images/create_branch.gif"></p>
@@ -403,14 +471,14 @@ Frank Aragona &amp; Juan Salazar
 <h2></h2>
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="237" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 236;"><span id="cb1-237"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb1-238"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-239"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
-<span id="cb1-240"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb1-241"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb1-242"><a href=""></a> ]<span class="op">,</span></span>
-<span id="cb1-243"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
-<span id="cb1-244"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="269" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 268;"><span id="cb1-269"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb1-270"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-271"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-272"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb1-273"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb1-274"><a href=""></a> ]<span class="op">,</span></span>
+<span id="cb1-275"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
+<span id="cb1-276"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -717,15 +785,61 @@ Frank Aragona &amp; Juan Salazar
 </div>
 </div>
 </section>
-<section id="examples-of-doh-epi-coders" class="slide level2">
-<h2>Examples of DOH-EPI-Coders</h2>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>scripts to create data files (<a href="https://github.com/NW-PaGe/lineage_classifications">lineage classifications</a>)</li>
+<li><a href="https://github.com/WAState-DeptHEALTH/COVID-Data-Quality">data processing scripts</a></li>
+</ul>
 </section>
 <section id="github-pages" class="slide level2">
 <h2>GitHub Pages</h2>
 <ul>
 <li>GitHub can host static webpages for free</li>
 <li>Works well with Quarto and Rmarkdown</li>
-<li></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Python Packages</strong></p>
+<iframe width="600" height="550" src="https://nw-page.github.io/wadoh_raccoon/" title="Quarto Documentation" class="myframe2"></iframe>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>ELR Documentation</strong></p>
+<iframe width="600" height="550" src="https://nw-page.github.io/covid_seq_elr/" title="Quarto Documentation" class="myframe2"></iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Reports</strong></p>
+<iframe width="600" height="550" src="https://nw-page.github.io/BacterialGenomicsSummaryOutput/" title="Quarto Documentation" class="myframe2"></iframe>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Publications</strong></p>
+<iframe width="600" height="550" src="https://nw-page.github.io/sequencing_integration_pipeline1.0/" title="Quarto Documentation" class="myframe2"></iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://nw-page.github.io/standards/gh/">DOH GitHub Policies</a></li>
+<li>Internal Sharepoint Docs (ask for links)</li>
 </ul>
 
 </section>
