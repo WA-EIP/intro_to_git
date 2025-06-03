@@ -8,6 +8,7 @@ format:
 revealjs-plugins:
     - excalidraw
 knitr: true
+lightbox: true
 ---
 
 ## the problem
@@ -249,9 +250,25 @@ knitr: true
 
 ### pull request
 
+::::{.columns}
+
+:::{.column}
+
+![after you pushing the branch, create a _pull request_](images/pr.png)
+:::
+
+:::{.column}
+
+
+![in GitHub you can _pull_ your branch into the main branch - this _merges_ the changes into your codebase](images/pr2.png)
+:::
+
+::::
+
+
 ### pull
 
--   pull the latest version of a branch
+-   back in your Git Desktop App, pull the latest version of a branch
 -   it will _pull_ the latest changes your teammates made into your local clone
 -   should pull regularly throughout the process
 
