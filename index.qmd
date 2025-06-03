@@ -8,6 +8,7 @@ format:
 revealjs-plugins:
     - excalidraw
 knitr: true
+lightbox: true
 ---
 
 ## the problem
@@ -115,7 +116,7 @@ knitr: true
 
 ::: {.v-center-container .incremental}
 -   Git repos {{< iconify pajamas:git style="color:#D0927D;" >}} -> **movies** 🎞️
--   GitHub {{< iconify pajamas:github >}} -> **Netflix** ☁️
+-   GitHub {{< iconify pajamas:github >}} -> **Netflix** {{< iconify material-symbols-light:desktop-cloud >}}
 :::
 
 :::{.notes}
@@ -226,7 +227,7 @@ knitr: true
 :::
 
 :::{.column}
-![](images/issues.png)
+![](images/commit.png)
 :::
 
 ::::
@@ -242,14 +243,32 @@ knitr: true
 :::
 
 :::{.column}
-![](images/issues.png)
+![](images/push.png)
 :::
 
 ::::
 
+### pull request
+
+::::{.columns}
+
+:::{.column}
+
+![after you pushing the branch, create a _pull request_](images/pr.png)
+:::
+
+:::{.column}
+
+
+![in GitHub you can _pull_ your branch into the main branch - this _merges_ the changes into your codebase](images/pr2.png)
+:::
+
+::::
+
+
 ### pull
 
--   pull the latest version of a branch
+-   back in your Git Desktop App, pull the latest version of a branch
 -   it will _pull_ the latest changes your teammates made into your local clone
 -   should pull regularly throughout the process
 
@@ -289,11 +308,12 @@ knitr: true
 
 -   GitHub can host static webpages for free
 -   Works well with Quarto and Rmarkdown
+-   Many of our public repos use GH Pages
 
 ##
 
 ::: {layout-ncol="2"}
-### Python Packages
+### Package Documentation
 
 ```{=html}
 <iframe width="600" height="550" src="https://nw-page.github.io/wadoh_raccoon/" title="Quarto Documentation" class="myframe2"></iframe>
@@ -322,5 +342,9 @@ knitr: true
 
 ## Resources
 
+- [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control)
+- [GitHub Intro](https://www.youtube.com/watch?v=pBy1zgt0XPc)
+- [GitHub for Beginners Playlist](https://www.youtube.com/watch?v=r8jQ9hVA2qs&list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f&index=15)
 - [DOH GitHub Policies](https://nw-page.github.io/standards/gh/)
 - Internal Sharepoint Docs (ask for links) 
+- [This slide show's GitHub Repo](https://github.com/WA-EIP/intro_to_git)
