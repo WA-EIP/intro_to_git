@@ -223,7 +223,8 @@ Features
 
 -   **branches:** team members work on different tasks without conflict
 -   **pull requests:** enable code review and discussion
--   **comments & conversations:** clear contextual communication history
+    -   **comment & review:** clear contextual communication history
+-   **sharing code**: easily share and control access to your code
 :::
 
 ::: column
@@ -231,15 +232,19 @@ Features
 :::
 
 ::: notes
--   **branches:** team members work on different tasks without conflict
+One of GitHub's biggest strengths is how it support collaboration through the entire workflow.
 
--   **pull requests:** enable code review and discussion
+-   I've already mentioned this, but it's worth repeating, **branches** let team members work on different tasks, at the same time, without conflict. I might be updating and reviewing code to include eCR labs in our reporting scripts, while somebody else is working on adding a new QA table to our email reports. We can both work in parallel, while our main codebase remains stable.
 
--   **comments & conversations:** clear contextual communication history
+-   Once a task is ready, we use **pull requests** to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase. I've found this particularly useful when onboarding new team members
+
+-   Within the pull request, users can **comment & review.** I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You're even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.
+
+-   Very importantly, GitHub makes **sharing code** extremely simple. Admins are able to control who can see, and who can edit code through public and private repositories. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
+
+Personally, I’ve found pull requests and code reviews incredibly useful for onboarding new users. They help me track whether all requested features were added, and if someone is coding in a language they’re still learning, I can provide targeted, helpful feedback while documenting their updates in an easily reviewable way.
 :::
 ::::::
-
-## 
 
 ## what do we use it for
 
