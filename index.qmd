@@ -13,74 +13,90 @@ lightbox: true
 
 ## the problem
 
-::::{.columns}
-
-:::{.column .incremental}
+:::::: columns
+::: {.column .incremental}
 -   multiple files for the same script
 -   easy to lose track of production version
 -   terrible for collaboration
-    -    who has the main script? 
-    -    who deleted my changes? 
-    -    conflicts?
-    -    I overwrote my code and lost everything {{< iconify twemoji:melting-face >}} 
+    -   who has the main script?
+    -   who deleted my changes?
+    -   conflicts?
+    -   I overwrote my code and lost everything {{< iconify twemoji:melting-face >}}
 :::
 
-:::{.column}
+:::: column
+::: box
+{{< iconify vscode-icons:file-type-rproj >}} 20211221_AllTests_datatable_conversion.R
 
-:::{.box}
-{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_datatable_conversion.R
+{{< iconify vscode-icons:file-type-rproj >}} 20211221_AllTests_datatable_conversion_local.R
 
-{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_datatable_conversion_local.R
+{{< iconify vscode-icons:file-type-rproj >}} 20211221_AllTests_updated.R
 
-{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_updated.R
+{{< iconify vscode-icons:file-type-rproj >}} 20211223_AllTests_dplyr_FA.R
 
-{{< iconify vscode-icons:file-type-rproj >}} 2021223_AllTests_dplyr_FA.R
-
-{{< iconify vscode-icons:file-type-rproj >}} 2021221_AllTests_dplyr_conversion_JS.R
+{{< iconify vscode-icons:file-type-rproj >}} 20211221_AllTests_dplyr_conversion_JS.R
 :::
-
-:::
-
 ::::
+::::::
 
-:::{.notes}
-- We've probably all been in this scenario where we have multiple versions of the same R script 
-- there are multiple files, each with slightly different names
-- nobody remembers what each file really contains or how they differ,
-- and it creates a chaotic environment where we don't know what the source of _truth_ is
+::: notes
+\- We've probably all been in this scenario where we have multiple versions of the same file, each with slightly different names or dates
 
-- so we lose track of production versions,
-- and it's terrible for collaboration
+\- nobody remembers what each file really contains or how they differ or which is actually the most recent,
+
+\- and it creates a chaotic environment where we don't know what the source of \*truth\* is:
+
+-   so we lose track of the most recent production version,
+
+-   and it's terrible for collaboration
+
+    -   Which script should we be running?
+
+    -   Another user deleted updates I made and now we have conflicting versions of the script on each of our computers
+
+    -   Or worst case scenario, you accidentally overwrite everything you worked on
+
+\- Teams often try to develop their own standards to control script versions internally, but there is no better management system than Git.
 :::
 
 ## what is Git?
 
-:::::: columns
-
-:::{.column .incremental}
+::::: columns
+::: {.column .incremental}
 -   [Git](https://git-scm.com/) is version control software
 -   projects have branches
--   create new branches to test code
--   isolate while keeping the `main` branch clean
--   transparent, keeps track of _everything_
--   prevents overwriting/losing your changes
+-   advantages:
+    -   create new branches to test code
+    -   isolate while keeping the `main` branch clean
+    -   version-tracking, keeps track of *everything*
+    -   prevents overwriting/losing your changes
 :::
 
 ::: column
 ![](images/branch.png)
 :::
+:::::
 
-::::::
+::: notes
+-   What is Git?
 
-:::{.notes}
-- Teams often try to develop their own standards to control script versions,
-- but there is no better management system than Git. It has become the software industry's standard for good reason
+-   Git is industry-standard version control software. It lets you isolate your \*main\* code from your development code
 
-- Git is version control software that lets you isolate your _source of truth_ code from your development code 
-- projects have branches; in this figure you can see a main branch that holds the _production_ or _source of truth_ code
-- if someone wants to edit, they can make an isolated copy, or branch, of that source.
-- It's transparent - it lets you see the entire history of your code base
-- and prevents accidental overwrites of your code
+-   projects have branches; in this figure you can see a \*main\* branch that holds the \*production\* or \*source of truth\* code in blue
+
+-   if someone wants to edit or add a new \*feature\*, they can make a new isolated copy, or branch, of that \*main\* code (seen here in yellow).
+
+-   Major advantages of this:
+
+    -   It allows you to create new branches to test code before you implement it.
+
+    -   Users can isolate new branches from your main branch to keep it clean and running until you are able to safely launch updates
+
+    -   It lets you see the entire history of your code base through really well-documented version-tracking
+
+    -   It prevents accidental overwrites of your code
+
+    For example, for the RESP-NET project my team has our main production branch that creates a weekly analytic file which we share with the CDC. However, we are constantly making improvements. If somebody on our team wants to update our code to report a new racial category, like **Middle-Eastern or North African (MENA)**, we don't want that user to make those changes directly in our \*main\* code until they have been thoroughly tested. So they would create a new branch off of main, make the necessary updates, and then merge them back into main once they're ready. Git lets you do this, seamlessly.
 :::
 
 ## what is GitHub?
@@ -88,86 +104,147 @@ lightbox: true
 :::::: columns
 :::: column
 ::: incremental
--   [GitHub](https://github.com/) is a platform that hosts Git repositories
--   code management
--   project management
--   it's where you collaborate
--   helps with isolating _your_ changes from your main code
--   transparent, helps see _everything_
+-   [GitHub](https://github.com/) is a graphic user interface platform that hosts Git repositories
+-   advantages:
+    -   isolate *your* changes from main codebase
+    -   code management
+    -   project management
+    -   collaboration
+    -   transparent, helps see *everything*
 :::
 ::::
 
 ::: column
 ![](images/svn.svg)
 :::
-
 ::::::
 
-:::{.notes}
-- GitHub is a platform that hosts your Git repository, or Git Project
-- the figure on the right shows a Git repo. Each team member can make a clone, or copy, of the repo and work on _isolated_ changes to the code 
-- It's kinda like the UI for Git management
-- it's good for code management, project management
-- it's where you will collaborate and discuss code changes
-- and it lets you visualize the Git history
+::: notes
+-   what is GitHub?
+-   GitHub is a graphic user interface platform that hosts your Git repository, or Git Projects, online
+-   It allows people to share, review, and contribute to each other's projects
+-   the figure on the right shows a Git repository or "repo". Each team member can make a clone, or copy, of the repo and work on *local* changes to the code
+-   the main advantages of using GitHub are:
+    -   it facilitates isolating your specific changes from the main codebase which allows for easier code management
+    -   It supports project management through issue tracking
+    -   it's where you will collaborate and discuss code with your teammates or external partners
+    -   and it lets you visualize the entire Git history
 :::
 
 ## tl;dr
 
 ::: {.v-center-container .incremental}
--   Git repos {{< iconify pajamas:git style="color:#D0927D;" >}} -> **movies** 🎞️
--   GitHub {{< iconify pajamas:github >}} -> **Netflix** {{< iconify material-symbols-light:desktop-cloud >}}
+-   Git repos {{< iconify pajamas:git style="color:#D0927D;" >}} -\> **movies** 🎞️
+-   GitHub {{< iconify pajamas:github >}} -\> **Netflix** {{< iconify material-symbols-light:desktop-cloud >}}
 :::
 
-:::{.notes}
+::: notes
+-   Git repositories, or projects, are like movies
 
-- Git repositories, or projects, are like movies
-- GitHub is like Netflix - it stores all your movies
+-   GitHub is like Netflix - it stores all your movies
 
-- Imagine your team wants to edit scenes in a movie
-- Git allows your team to make edits to the scenes and keeps track of all the changes that were made
-- It also helps to prevent conflicts between your scene edits and your teammates edits.
+-   Imagine your team wants to edit scenes in a movie
 
+-   Git allows your team to make edits to the scenes and keeps track of all the changes that were made
 
-- When you want to work on a project, you can pull the movie from Netflix and work on scene edits in isolation
-- This isn't the best analogy because there is a lot more that GitHub does
+-   It also helps to prevent conflicts between your scene edits and your teammates edits.
 
+-   When you want to work on a project, you can pull the movie from Netflix and work on scene edits in isolation
+
+-   This is an incomplete analogy, however, because GitHub can do so much more
 :::
 
+## benefits of GitHub - code management
 
-## benefits of Git - code management
+:::::: columns
+::: {.column .incremental}
+Features:
 
-::::{.columns}
-
-:::{.column .incremental}
--   **transparency:** view the entire history of your code
--   **time travel:** roll back to previous versions 
--   **organization:** clear division of production and development
+-   **version history (commits):** easily view the entire version history of your codebase
+    -   **change attribution**: know who did what, and why
+    -   **time travel:** roll back to previous versions
+-   **structured repositories**: organizes scripts and documentation clearly
 :::
 
-:::{.column}
+::: column
 ![](images/code_change.png)
 :::
 
-::::
+::: notes
+GitHub helps manage code through transparency and structure, which is extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features that support code management are:
+
+-   **Version history, which is tracked through commits.** Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when.
+
+    -   version history also enables **change attribution**. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind changes when you revisit projects weeks and months later.
+
+    -   version history also gives you the power of **time travel**. If something in your codebase were to break, or you needed to undo a change, you can easily roll back to previous versions. Everything is stored in a centralized place, so there's no need to go digging through your personal files or files on the Y drive.
+
+-   Finally, GitHub encourages **structured repositories** as a means to organize scripts and documentation consistently. It also let you clearly separate production-ready code from work that is still in development. And you can use folders or repos to separate different projects.
+
+These features all help prevent mistakes and help teams work more effectively, especially if code is being reused, shared, or updated over time.
+:::
+::::::
 
 ## benefits of GitHub - project management
 
-::::{.columns}
+:::::: columns
+::: {.column .incremental}
+Features:
 
-:::{.column .incremental}
--   **transparency:** track all conversations and decisions
--   **organization:** easy to tag and search tasks
-    -    can use like smartsheet
-    -    auto links tasks to your code
+-   **issues**: track tasks, decisions, bugs, and enhancements
+    -   **labels and assignees**: categorize work and assign ownership
+    -   **organization:** easy to tag and search tasks
+-   **milestones:** group issues to track progress towards goals
 :::
 
-:::{.column}
+::: column
 ![](images/issues.png)
 :::
 
-::::
+::: notes
+Beyond managing code, GitHub also has some tools for managing projects. Some features worth highlighting:
 
+-   First, we have **issues**. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase. There's a screenshot on the right of an issues page.
+    -   As part of issues, Github has **labels and assignees**. Labels help categorize work. My team will use these to define enhancements, priority items, documentation fixes, etc. And you can assign issues to specific team members so it's clear who is responsible for what. In this screenshot, we have a few issues with descriptive titles. In the bubbles to the right, are labels to help categorize issues. At the far right, you can see the user which has been assigned this task.
+    -   Issues are well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.
+-   Lastly, there's also the ability to group issues together in **milestones** so you can track progress toward larger goals, like creating a new report or publishing a new dashboard.
+
+If you've used tools ike Smartsheet, GitHub's project board also offers some similar way to track project milestones there.
+
+Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates.
+:::
+::::::
+
+## benefits of Git - collaboration
+
+:::::: columns
+::: {.column .incremental}
+Features
+
+-   **branches:** team members work on different tasks without conflict
+-   **pull requests:** enable code review and discussion
+    -   **comment & review:** clear contextual communication history
+-   **sharing code**: easily share and control access to your code
+:::
+
+::: column
+![](images/code_change.png)
+:::
+
+::: notes
+One of GitHub's biggest strengths is how it support collaboration through the entire workflow.
+
+-   I've already mentioned this, but it's worth repeating, **branches** let team members work on different tasks, at the same time, without conflict. I might be updating and reviewing code to include eCR labs in our reporting scripts, while somebody else is working on adding a new QA table to our email reports. We can both work in parallel, while our main codebase remains stable.
+
+-   Once a task is ready, we use **pull requests** to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase. I've found this particularly useful when onboarding new team members
+
+-   Within the pull request, users can **comment & review.** I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You're even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.
+
+-   Very importantly, GitHub makes **sharing code** extremely simple. Admins are able to control who can see, and who can edit code through public and private repositories. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
+
+Personally, I’ve found pull requests and code reviews incredibly useful for onboarding new users. They help me track whether all requested features were added, and if someone is coding in a language they’re still learning, I can provide targeted, helpful feedback while documenting their updates in an easily reviewable way.
+:::
+::::::
 
 ## what do we use it for
 
@@ -176,103 +253,83 @@ lightbox: true
 -   big collaborative projects
 -   whenever we need to share code
 
-
 ## how to use Git/GitHub in practice
 
-::: panel-tabset
-
+:::::::::::::::::: panel-tabset
 ### 1. clone
 
-
-::::{.columns}
-
-:::{.column }
+::::: columns
+::: column
 -   find a repo in GitHub
 -   clone the repo: copy the whole repo to a folder on your laptop
 :::
 
-:::{.column}
+::: column
 ![](images/OpenwGitHubDesktop.png)
 :::
-
-::::
+:::::
 
 ### 2. create a branch
 
-::::{.columns}
-
-:::{.column}
-
+::::: columns
+::: column
 -   make your own branch for your isolated edits
 -   keeps the main branch clean
-
 :::
 
-:::{.column}
+::: column
 ![](images/create_branch.gif)
 :::
+:::::
 
-::::
+### 3. commit
 
-
-### 3. commit 
-
-::::{.columns}
-
-:::{.column}
+::::: columns
+::: column
 -   write code like normal
--   save, and **commit** code to branch
--   commits are changes stored in the branch
+-   save your code updates, and **commit** code updates to branch
+    -   commits are changes stored in the branch
 -   make small, frequent commits if possible
 :::
 
-:::{.column}
+::: column
 ![](images/commit.png)
 :::
-
-::::
+:::::
 
 ### 4. push
 
-::::{.columns}
-
-:::{.column}
+::::: columns
+::: column
 -   after you save and commit,
 -   **push** branch to GitHub
--   like taking your local changes and _pushing_ them to GitHub where your team can see the changes
+    -   if first time creating a branch, must publish first
+-   like taking your local changes and *pushing* them to GitHub where your team can see the changes
 :::
 
-:::{.column}
+::: column
 ![](images/push.png)
 :::
+:::::
 
-::::
+### 5. pull request
 
-### pull request
-
-::::{.columns}
-
-:::{.column}
-
-![after you pushing the branch, create a _pull request_](images/pr.png)
+::::: columns
+::: column
+![after you push the branch, create a *pull request*](images/pr.png)
 :::
 
-:::{.column}
-
-
-![in GitHub you can _pull_ your branch into the main branch - this _merges_ the changes into your codebase](images/pr2.png)
+::: column
+![in GitHub you can *pull* your feature branch into the main branch - this *merges* the changes into your codebase](images/pr2.png)
 :::
+:::::
 
-::::
-
-
-### pull
+### 6. pull
 
 -   back in your Git Desktop App, pull the latest version of a branch
--   it will _pull_ the latest changes your teammates made into your local clone
+-   it will *pull* the latest changes your teammates made into your local clone
 -   should pull regularly throughout the process
-
-:::
+::::::::::::::::::
 
 ## DOH-EPI-Coders
 
@@ -299,10 +356,10 @@ lightbox: true
 
 {{< include _beeswarm_plot.qmd >}}
 
-## Examples 
+## Examples
 
-- scripts to create data files ([lineage classifications](https://github.com/NW-PaGe/lineage_classifications))
-- [data processing scripts](https://github.com/WAState-DeptHEALTH/COVID-Data-Quality)
+-   scripts to create data files ([lineage classifications](https://github.com/NW-PaGe/lineage_classifications))
+-   [data processing scripts](https://github.com/WAState-DeptHEALTH/COVID-Data-Quality)
 
 ## GitHub Pages
 
@@ -310,7 +367,7 @@ lightbox: true
 -   Works well with Quarto and Rmarkdown
 -   Many of our public repos use GH Pages
 
-##
+## 
 
 ::: {layout-ncol="2"}
 ### Package Documentation
@@ -318,6 +375,7 @@ lightbox: true
 ```{=html}
 <iframe width="600" height="550" src="https://nw-page.github.io/wadoh_raccoon/" title="Quarto Documentation" class="myframe2"></iframe>
 ```
+
 ### ELR Documentation
 
 ```{=html}
@@ -333,6 +391,7 @@ lightbox: true
 ```{=html}
 <iframe width="600" height="550" src="https://nw-page.github.io/BacterialGenomicsSummaryOutput/" title="Quarto Documentation" class="myframe2"></iframe>
 ```
+
 ### Publications
 
 ```{=html}
@@ -342,9 +401,16 @@ lightbox: true
 
 ## Resources
 
-- [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control)
-- [GitHub Intro](https://www.youtube.com/watch?v=pBy1zgt0XPc)
-- [GitHub for Beginners Playlist](https://www.youtube.com/watch?v=r8jQ9hVA2qs&list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f&index=15)
-- [DOH GitHub Policies](https://nw-page.github.io/standards/gh/)
-- Internal Sharepoint Docs (ask for links) 
-- [This slide show's GitHub Repo](https://github.com/WA-EIP/intro_to_git)
+-   [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control)
+-   [GitHub Intro](https://www.youtube.com/watch?v=pBy1zgt0XPc)
+-   [GitHub for Beginners Playlist](https://www.youtube.com/watch?v=r8jQ9hVA2qs&list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f&index=15)
+-   [DOH GitHub Policies](https://nw-page.github.io/standards/gh/)
+-   Internal Sharepoint Docs (ask for links)
+-   [This slide show's GitHub Repo](https://github.com/WA-EIP/intro_to_git)
+
+## Questions?
+
+## Advanced Settings
+
+-   Release cycles
+-   Git Actions
