@@ -154,48 +154,92 @@ lightbox: true
 -   This is an incomplete analogy, however, because GitHub can do so much more
 :::
 
-## benefits of GitHub - collaboration
+## benefits of GitHub - code management
 
-::::: columns
+:::::: columns
 ::: {.column .incremental}
--   **version control:** easily view the entire version history of your code
--   **time travel:** roll back to previous versions
--   **organization:** clear division of production and development
+Features:
+
+-   **version history (commits):** easily view the entire version history of your codebase
+    -   **change attribution**: know who did what, and why
+    -   **time travel:** roll back to previous versions
+-   **structured repositories**: organizes scripts and documentation clearly
 :::
 
 ::: column
 ![](images/code_change.png)
 :::
-:::::
 
-## benefits of Git - code management
+::: notes
+GitHub helps manage code through transparency and structure, which is extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features that support code management are:
 
-::::: columns
-::: {.column .incremental}
--   **version control:** easily view the entire version history of your code
--   **time travel:** roll back to previous versions
--   **organization:** clear division of production and development
+-   **Version history, which is tracked through commits.** Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when.
+
+    -   version history also enables **change attribution**. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind changes when you revisit projects weeks and months later.
+
+    -   version history also gives you the power of **time travel**. If something in your codebase were to break, or you needed to undo a change, you can easily roll back to previous versions. Everything is stored in a centralized place, so there's no need to go digging through your personal files or files on the Y drive.
+
+-   Finally, GitHub encourages **structured repositories** as a means to organize scripts and documentation consistently. It also let you clearly separate production-ready code from work that is still in development. And you can use folders or repos to separate different projects.
+
+These features all help prevent mistakes and help teams work more effectively, especially if code is being reused, shared, or updated over time.
 :::
-
-::: column
-![](images/code_change.png)
-:::
-:::::
+::::::
 
 ## benefits of GitHub - project management
 
-::::: columns
+:::::: columns
 ::: {.column .incremental}
--   **transparency:** track all conversations and decisions
--   **organization:** easy to tag and search tasks
-    -   can use like smartsheet
-    -   auto links tasks to your code
+Features:
+
+-   **issues**: track tasks, decisions, bugs, and enhancements
+    -   **labels and assignees**: categorize work and assign ownership
+    -   **organization:** easy to tag and search tasks
+-   **milestones:** group issues to track progress towards goals
 :::
 
 ::: column
 ![](images/issues.png)
 :::
-:::::
+
+::: notes
+Beyond managing code, GitHub also has some tools for managing projects. Some features worth highlighting:
+
+-   First, we have **issues**. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase. There's a screenshot on the right of an issues page.
+    -   As part of issues, Github has **labels and assignees**. Labels help categorize work. My team will use these to define enhancements, priority items, documentation fixes, etc. And you can assign issues to specific team members so it's clear who is responsible for what. In this screenshot, we have a few issues with descriptive titles. In the bubbles to the right, are labels to help categorize issues. At the far right, you can see the user which has been assigned this task.
+    -   Issues are well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.
+-   Lastly, there's also the ability to group issues together in **milestones** so you can track progress toward larger goals, like creating a new report or publishing a new dashboard.
+
+If you've used tools ike Smartsheet, GitHub's project board also offers some similar way to track project milestones there.
+
+Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates.
+:::
+::::::
+
+## benefits of Git - collaboration
+
+:::::: columns
+::: {.column .incremental}
+Features
+
+-   **branches:** team members work on different tasks without conflict
+-   **pull requests:** enable code review and discussion
+-   **comments & conversations:** clear contextual communication history
+:::
+
+::: column
+![](images/code_change.png)
+:::
+
+::: notes
+-   **branches:** team members work on different tasks without conflict
+
+-   **pull requests:** enable code review and discussion
+
+-   **comments & conversations:** clear contextual communication history
+:::
+::::::
+
+## 
 
 ## what do we use it for
 
@@ -359,7 +403,7 @@ lightbox: true
 -   Internal Sharepoint Docs (ask for links)
 -   [This slide show's GitHub Repo](https://github.com/WA-EIP/intro_to_git)
 
-## Questions? 
+## Questions?
 
 ## Advanced Settings
 
