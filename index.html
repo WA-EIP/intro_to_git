@@ -227,22 +227,27 @@ Frank Aragona &amp; Juan Salazar
 </ul>
 </div><div class="column">
 <div class="box">
-<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_datatable_conversion.R</p>
-<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_datatable_conversion_local.R</p>
-<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_updated.R</p>
-<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021223_AllTests_dplyr_FA.R</p>
-<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 2021221_AllTests_dplyr_conversion_JS.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 20211221_AllTests_datatable_conversion.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 20211221_AllTests_datatable_conversion_local.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 20211221_AllTests_updated.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 20211223_AllTests_dplyr_FA.R</p>
+<p><iconify-icon role="img" inline="" icon="vscode-icons:file-type-rproj" aria-label="Icon file-type-rproj from vscode-icons Iconify.design set." title="Icon file-type-rproj from vscode-icons Iconify.design set."></iconify-icon> 20211221_AllTests_dplyr_conversion_JS.R</p>
 </div>
 </div></div>
 <aside class="notes">
+<p>- We’ve probably all been in this scenario where we have multiple versions of the same file, each with slightly different names or dates</p>
+<p>- nobody remembers what each file really contains or how they differ or which is actually the most recent,</p>
+<p>- and it creates a chaotic environment where we don’t know what the source of *truth* is:</p>
 <ul>
-<li><p>We’ve probably all been in this scenario where we have multiple versions of the same R script</p></li>
-<li><p>there are multiple files, each with slightly different names</p></li>
-<li><p>nobody remembers what each file really contains or how they differ,</p></li>
-<li><p>and it creates a chaotic environment where we don’t know what the source of <em>truth</em> is</p></li>
-<li><p>so we lose track of production versions,</p></li>
-<li><p>and it’s terrible for collaboration</p></li>
+<li><p>so we lose track of the most recent production version,</p></li>
+<li><p>and it’s terrible for collaboration</p>
+<ul>
+<li><p>Which script should we be running?</p></li>
+<li><p>Another user deleted updates I made and now we have conflicting versions of the script on each of our computers</p></li>
+<li><p>Or worst case scenario, you accidentally overwrite everything you worked on</p></li>
+</ul></li>
 </ul>
+<p>- Teams often try to develop their own standards to control script versions internally, but there is no better management system than Git.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -262,23 +267,31 @@ Frank Aragona &amp; Juan Salazar
 <ul>
 <li class="fragment"><a href="https://git-scm.com/">Git</a> is version control software</li>
 <li class="fragment">projects have branches</li>
+<li class="fragment">advantages:
+<ul>
 <li class="fragment">create new branches to test code</li>
 <li class="fragment">isolate while keeping the <code>main</code> branch clean</li>
-<li class="fragment">transparent, keeps track of <em>everything</em></li>
+<li class="fragment">version-tracking, keeps track of <em>everything</em></li>
 <li class="fragment">prevents overwriting/losing your changes</li>
+</ul></li>
 </ul>
 </div><div class="column">
 <p><a href="images/branch.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/branch.png"></a></p>
 </div></div>
 <aside class="notes">
 <ul>
-<li><p>Teams often try to develop their own standards to control script versions,</p></li>
-<li><p>but there is no better management system than Git. It has become the software industry’s standard for good reason</p></li>
-<li><p>Git is version control software that lets you isolate your <em>source of truth</em> code from your development code</p></li>
-<li><p>projects have branches; in this figure you can see a main branch that holds the <em>production</em> or <em>source of truth</em> code</p></li>
-<li><p>if someone wants to edit, they can make an isolated copy, or branch, of that source.</p></li>
-<li><p>It’s transparent - it lets you see the entire history of your code base</p></li>
-<li><p>and prevents accidental overwrites of your code</p></li>
+<li><p>What is Git?</p></li>
+<li><p>Git is industry-standard version control software. It lets you isolate your *main* code from your development code</p></li>
+<li><p>projects have branches; in this figure you can see a *main* branch that holds the *production* or *source of truth* code in blue</p></li>
+<li><p>if someone wants to edit or add a new *feature*, they can make a new isolated copy, or branch, of that *main* code (seen here in yellow).</p></li>
+<li><p>Major advantages of this:</p>
+<ul>
+<li><p>It allows you to create new branches to test code before you implement it.</p></li>
+<li><p>Users can isolate new branches from your main branch to keep it clean and running until you are able to safely launch updates</p></li>
+<li><p>It lets you see the entire history of your code base through really well-documented version-tracking</p></li>
+<li><p>It prevents accidental overwrites of your code</p></li>
+</ul>
+<p>For example, for the RESP-NET project my team has our main production branch that creates a weekly analytic file which we share with the CDC. However, we are constantly making improvements. If somebody on our team wants to update our code to report a new racial category, like <strong>Middle-Eastern or North African (MENA)</strong>, we don’t want that user to make those changes directly in our *main* code until they have been thoroughly tested. So they would create a new branch off of main, make the necessary updates, and then merge them back into main once they’re ready. Git lets you do this, seamlessly.</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -298,12 +311,15 @@ Frank Aragona &amp; Juan Salazar
 <div class="column">
 <div>
 <ul>
-<li class="fragment"><a href="https://github.com/">GitHub</a> is a platform that hosts Git repositories</li>
+<li class="fragment"><a href="https://github.com/">GitHub</a> is a graphic user interface platform that hosts Git repositories</li>
+<li class="fragment">advantages:
+<ul>
+<li class="fragment">isolate <em>your</em> changes from main codebase</li>
 <li class="fragment">code management</li>
 <li class="fragment">project management</li>
-<li class="fragment">it’s where you collaborate</li>
-<li class="fragment">helps with isolating <em>your</em> changes from your main code</li>
+<li class="fragment">collaboration</li>
 <li class="fragment">transparent, helps see <em>everything</em></li>
+</ul></li>
 </ul>
 </div>
 </div><div class="column">
@@ -311,12 +327,17 @@ Frank Aragona &amp; Juan Salazar
 </div></div>
 <aside class="notes">
 <ul>
-<li>GitHub is a platform that hosts your Git repository, or Git Project</li>
-<li>the figure on the right shows a Git repo. Each team member can make a clone, or copy, of the repo and work on <em>isolated</em> changes to the code</li>
-<li>It’s kinda like the UI for Git management</li>
-<li>it’s good for code management, project management</li>
-<li>it’s where you will collaborate and discuss code changes</li>
-<li>and it lets you visualize the Git history</li>
+<li>what is GitHub?</li>
+<li>GitHub is a graphic user interface platform that hosts your Git repository, or Git Projects, online</li>
+<li>It allows people to share, review, and contribute to each other’s projects</li>
+<li>the figure on the right shows a Git repository or “repo”. Each team member can make a clone, or copy, of the repo and work on <em>local</em> changes to the code</li>
+<li>the main advantages of using GitHub are:
+<ul>
+<li>it facilitates isolating your specific changes from the main codebase which allows for easier code management</li>
+<li>It supports project management through issue tracking</li>
+<li>it’s where you will collaborate and discuss code with your teammates or external partners</li>
+<li>and it lets you visualize the entire Git history</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -346,7 +367,7 @@ Frank Aragona &amp; Juan Salazar
 <li><p>Git allows your team to make edits to the scenes and keeps track of all the changes that were made</p></li>
 <li><p>It also helps to prevent conflicts between your scene edits and your teammates edits.</p></li>
 <li><p>When you want to work on a project, you can pull the movie from Netflix and work on scene edits in isolation</p></li>
-<li><p>This isn’t the best analogy because there is a lot more that GitHub does</p></li>
+<li><p>This is an incomplete analogy, however, because GitHub can do so much more</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -360,34 +381,121 @@ Frank Aragona &amp; Juan Salazar
           display:block!important;
       }</style></aside>
 </section>
-<section id="benefits-of-git---code-management" class="slide level2">
-<h2>benefits of Git - code management</h2>
+<section id="benefits-of-github---code-management" class="slide level2">
+<h2>benefits of GitHub - code management</h2>
 <div class="columns">
 <div class="column">
+<p>Features:</p>
 <ul>
-<li class="fragment"><strong>transparency:</strong> view the entire history of your code</li>
+<li class="fragment"><strong>version history (commits):</strong> easily view the entire version history of your codebase
+<ul>
+<li class="fragment"><strong>change attribution</strong>: know who did what, and why</li>
 <li class="fragment"><strong>time travel:</strong> roll back to previous versions</li>
-<li class="fragment"><strong>organization:</strong> clear division of production and development</li>
+</ul></li>
+<li class="fragment"><strong>structured repositories</strong>: organizes scripts and documentation clearly</li>
 </ul>
 </div><div class="column">
 <p><a href="images/code_change.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/code_change.png"></a></p>
-</div></div>
+</div><aside class="notes">
+<p>GitHub helps manage code through transparency and structure, which is extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features that support code management are:</p>
+<ul>
+<li><p><strong>Version history, which is tracked through commits.</strong> Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when.</p>
+<ul>
+<li><p>version history also enables <strong>change attribution</strong>. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind changes when you revisit projects weeks and months later.</p></li>
+<li><p>version history also gives you the power of <strong>time travel</strong>. If something in your codebase were to break, or you needed to undo a change, you can easily roll back to previous versions. Everything is stored in a centralized place, so there’s no need to go digging through your personal files or files on the Y drive.</p></li>
+</ul></li>
+<li><p>Finally, GitHub encourages <strong>structured repositories</strong> as a means to organize scripts and documentation consistently. It also let you clearly separate production-ready code from work that is still in development. And you can use folders or repos to separate different projects.</p></li>
+</ul>
+<p>These features all help prevent mistakes and help teams work more effectively, especially if code is being reused, shared, or updated over time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="benefits-of-github---project-management" class="slide level2">
 <h2>benefits of GitHub - project management</h2>
 <div class="columns">
 <div class="column">
+<p>Features:</p>
 <ul>
-<li class="fragment"><strong>transparency:</strong> track all conversations and decisions</li>
-<li class="fragment"><strong>organization:</strong> easy to tag and search tasks
+<li class="fragment"><strong>issues</strong>: track tasks, decisions, bugs, and enhancements
 <ul>
-<li class="fragment">can use like smartsheet</li>
-<li class="fragment">auto links tasks to your code</li>
+<li class="fragment"><strong>labels and assignees</strong>: categorize work and assign ownership</li>
+<li class="fragment"><strong>organization:</strong> easy to tag and search tasks</li>
 </ul></li>
+<li class="fragment"><strong>milestones:</strong> group issues to track progress towards goals</li>
 </ul>
 </div><div class="column">
 <p><a href="images/issues.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/issues.png"></a></p>
-</div></div>
+</div><aside class="notes">
+<p>Beyond managing code, GitHub also has some tools for managing projects. Some features worth highlighting:</p>
+<ul>
+<li>First, we have <strong>issues</strong>. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase. There’s a screenshot on the right of an issues page.
+<ul>
+<li>As part of issues, Github has <strong>labels and assignees</strong>. Labels help categorize work. My team will use these to define enhancements, priority items, documentation fixes, etc. And you can assign issues to specific team members so it’s clear who is responsible for what. In this screenshot, we have a few issues with descriptive titles. In the bubbles to the right, are labels to help categorize issues. At the far right, you can see the user which has been assigned this task.</li>
+<li>Issues are well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.</li>
+</ul></li>
+<li>Lastly, there’s also the ability to group issues together in <strong>milestones</strong> so you can track progress toward larger goals, like creating a new report or publishing a new dashboard.</li>
+</ul>
+<p>If you’ve used tools ike Smartsheet, GitHub’s project board also offers some similar way to track project milestones there.</p>
+<p>Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="benefits-of-git---collaboration" class="slide level2">
+<h2>benefits of Git - collaboration</h2>
+<div class="columns">
+<div class="column">
+<p>Features</p>
+<ul>
+<li class="fragment"><strong>branches:</strong> team members work on different tasks without conflict</li>
+<li class="fragment"><strong>pull requests:</strong> enable code review and discussion
+<ul>
+<li class="fragment"><strong>comment &amp; review:</strong> clear contextual communication history</li>
+</ul></li>
+<li class="fragment"><strong>sharing code</strong>: easily share and control access to your code</li>
+</ul>
+</div><div class="column">
+<p><a href="images/code_change.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/code_change.png"></a></p>
+</div><aside class="notes">
+<p>One of GitHub’s biggest strengths is how it support collaboration through the entire workflow.</p>
+<ul>
+<li><p>I’ve already mentioned this, but it’s worth repeating, <strong>branches</strong> let team members work on different tasks, at the same time, without conflict. I might be updating and reviewing code to include eCR labs in our reporting scripts, while somebody else is working on adding a new QA table to our email reports. We can both work in parallel, while our main codebase remains stable.</p></li>
+<li><p>Once a task is ready, we use <strong>pull requests</strong> to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase. I’ve found this particularly useful when onboarding new team members</p></li>
+<li><p>Within the pull request, users can <strong>comment &amp; review.</strong> I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You’re even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.</p></li>
+<li><p>Very importantly, GitHub makes <strong>sharing code</strong> extremely simple. Admins are able to control who can see, and who can edit code through public and private repositories. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.</p></li>
+</ul>
+<p>Personally, I’ve found pull requests and code reviews incredibly useful for onboarding new users. They help me track whether all requested features were added, and if someone is coding in a language they’re still learning, I can provide targeted, helpful feedback while documenting their updates in an easily reviewable way.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="what-do-we-use-it-for" class="slide level2">
 <h2>what do we use it for</h2>
@@ -401,7 +509,7 @@ Frank Aragona &amp; Juan Salazar
 <section id="how-to-use-gitgithub-in-practice" class="slide level2">
 <h2>how to use Git/GitHub in practice</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1. clone</a></li><li><a href="#tabset-1-2">2. create a branch</a></li><li><a href="#tabset-1-3">3. commit</a></li><li><a href="#tabset-1-4">4. push</a></li><li><a href="#tabset-1-5">pull request</a></li><li><a href="#tabset-1-6">pull</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1. clone</a></li><li><a href="#tabset-1-2">2. create a branch</a></li><li><a href="#tabset-1-3">3. commit</a></li><li><a href="#tabset-1-4">4. push</a></li><li><a href="#tabset-1-5">5. pull request</a></li><li><a href="#tabset-1-6">6. pull</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="columns">
@@ -411,7 +519,7 @@ Frank Aragona &amp; Juan Salazar
 <li>clone the repo: copy the whole repo to a folder on your laptop</li>
 </ul>
 </div><div class="column">
-<p><a href="images/OpenwGitHubDesktop.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/OpenwGitHubDesktop.png"></a></p>
+<p><a href="images/OpenwGitHubDesktop.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/OpenwGitHubDesktop.png"></a></p>
 </div></div>
 </div>
 <div id="tabset-1-2">
@@ -422,7 +530,7 @@ Frank Aragona &amp; Juan Salazar
 <li>keeps the main branch clean</li>
 </ul>
 </div><div class="column">
-<p><a href="images/create_branch.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/create_branch.gif"></a></p>
+<p><a href="images/create_branch.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/create_branch.gif"></a></p>
 </div></div>
 </div>
 <div id="tabset-1-3">
@@ -430,12 +538,14 @@ Frank Aragona &amp; Juan Salazar
 <div class="column">
 <ul>
 <li>write code like normal</li>
-<li>save, and <strong>commit</strong> code to branch</li>
+<li>save your code updates, and <strong>commit</strong> code updates to branch
+<ul>
 <li>commits are changes stored in the branch</li>
+</ul></li>
 <li>make small, frequent commits if possible</li>
 </ul>
 </div><div class="column">
-<p><a href="images/commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/commit.png"></a></p>
+<p><a href="images/commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/commit.png"></a></p>
 </div></div>
 </div>
 <div id="tabset-1-4">
@@ -443,11 +553,14 @@ Frank Aragona &amp; Juan Salazar
 <div class="column">
 <ul>
 <li>after you save and commit,</li>
-<li><strong>push</strong> branch to GitHub</li>
+<li><strong>push</strong> branch to GitHub
+<ul>
+<li>if first time creating a branch, must publish first</li>
+</ul></li>
 <li>like taking your local changes and <em>pushing</em> them to GitHub where your team can see the changes</li>
 </ul>
 </div><div class="column">
-<p><a href="images/push.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/push.png"></a></p>
+<p><a href="images/push.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/push.png"></a></p>
 </div></div>
 </div>
 <div id="tabset-1-5">
@@ -455,15 +568,15 @@ Frank Aragona &amp; Juan Salazar
 <div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/pr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="after you pushing the branch, create a pull request"><img data-src="images/pr.png" alt="after you pushing the branch, create a pull request"></a></p>
-<figcaption>after you pushing the branch, create a <em>pull request</em></figcaption>
+<p><a href="images/pr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="after you push the branch, create a pull request"><img data-src="images/pr.png" alt="after you push the branch, create a pull request"></a></p>
+<figcaption>after you push the branch, create a <em>pull request</em></figcaption>
 </figure>
 </div>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/pr2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="in GitHub you can pull your branch into the main branch - this merges the changes into your codebase"><img data-src="images/pr2.png" alt="in GitHub you can pull your branch into the main branch - this merges the changes into your codebase"></a></p>
-<figcaption>in GitHub you can <em>pull</em> your branch into the main branch - this <em>merges</em> the changes into your codebase</figcaption>
+<p><a href="images/pr2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="in GitHub you can pull your feature branch into the main branch - this merges the changes into your codebase"><img data-src="images/pr2.png" alt="in GitHub you can pull your feature branch into the main branch - this merges the changes into your codebase"></a></p>
+<figcaption>in GitHub you can <em>pull</em> your feature branch into the main branch - this <em>merges</em> the changes into your codebase</figcaption>
 </figure>
 </div>
 </div></div>
@@ -492,14 +605,14 @@ Frank Aragona &amp; Juan Salazar
 <h2></h2>
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="288" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 287;"><span id="cb1-288"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb1-289"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-290"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
-<span id="cb1-291"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb1-292"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb1-293"><a href=""></a> ]<span class="op">,</span></span>
-<span id="cb1-294"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
-<span id="cb1-295"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="345" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 344;"><span id="cb1-345"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb1-346"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-347"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-348"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb1-349"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb1-350"><a href=""></a> ]<span class="op">,</span></span>
+<span id="cb1-351"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
+<span id="cb1-352"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -866,6 +979,16 @@ Frank Aragona &amp; Juan Salazar
 <li><a href="https://nw-page.github.io/standards/gh/">DOH GitHub Policies</a></li>
 <li>Internal Sharepoint Docs (ask for links)</li>
 <li><a href="https://github.com/WA-EIP/intro_to_git">This slide show’s GitHub Repo</a></li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+</section>
+<section id="advanced-settings" class="slide level2">
+<h2>Advanced Settings</h2>
+<ul>
+<li>Release cycles</li>
+<li>Git Actions</li>
 </ul>
 
 </section>
