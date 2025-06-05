@@ -90,7 +90,7 @@ lightbox: true
 
     -   It allows you to create new branches to test code before you implement it.
 
-    -   Users can isolate new branches from your main branch to keep it clean and running until you are able to safely launch updates
+    -   Users can isolate new branches from your main branch to keep the main branch clean and running until you are able to safely launch updates
 
     -   It lets you see the entire history of your code base through really well-documented version-tracking
 
@@ -232,7 +232,7 @@ Features
 :::
 
 ::: column
-![](images/code_change.png)
+![](images/code_review.png)
 :::
 
 ::: notes
@@ -243,6 +243,8 @@ One of GitHub's biggest strengths is how it supports collaboration through the e
 -   Once a task is ready, we use **pull requests** to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase.
 
 -   Within the pull request, users can **comment & review.** I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You're even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.
+
+    -   In this screenshot, a teammate asked me to review their code. I found a small issue, requested a change, and left a comment with my suggested fix. GitHub makes it really simple to track those updates. So now I can see specifically what my team member updated since the previous review - he also left a comment with a description. and it's really easy to grant final approval once everything's ready to merge into the main codebase.
 
 -   Very importantly, GitHub makes **sharing code** extremely simple. Admins are able to control who can see, and who can edit code through the use of organizations, public repos, and private repos which I'll cover a bit more later.
 
@@ -271,7 +273,7 @@ How does our team, DIQA, use git and GitHub?
 
     -   In Github, an organization is a shared workspace where multiple related projects can live under one umbrella. Within an organization, we can create multiple repos, each one dedicated to a specific project. This helps us keep repos organized and separate, so it’s easier to find what you need and collaborate within focused groups.
 
-    -   Organizations also let us manage access carefully. We can have private and public repos. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
+    -   Organizations also let us manage access carefully. We can have private and public repos within a single org. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
 
     -   We recently set up the WA-Emerging Infections Program (WA-EIP) organization. The goal is to house all EIP-related work, including both the **RESP-NET** repositories and the **MPOX vaccination study** repos.
 
