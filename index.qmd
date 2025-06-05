@@ -1,6 +1,6 @@
 ---
 title: Intro to Git and GitHub {{< iconify pajamas:gitea style="color:#48BDF3;">}}
-author: Frank Aragona & Juan Salazar 
+author: Frank Aragona & Juan Salazar, DIQA 
 format: 
     revealjs: 
         theme: [default, styles.scss]
@@ -97,6 +97,8 @@ lightbox: true
     -   It prevents accidental overwrites of your code
 
     For example, for the RESP-NET project my team has our main production branch that creates a weekly analytic file which we share with the CDC. However, we are constantly making improvements. If somebody on our team wants to update our code to report a new racial category, like **Middle-Eastern or North African (MENA)**, we don't want that user to make those changes directly in our \*main\* code until they have been thoroughly tested. So they would create a new branch off of main, make the necessary updates, and then merge them back into main once they're ready. Git lets you do this, seamlessly.
+
+But to effectively use git, you also need to use a git management tool. And the most popular tool to use is GitHub.
 :::
 
 ## what is GitHub?
@@ -105,9 +107,9 @@ lightbox: true
 :::: column
 ::: incremental
 -   [GitHub](https://github.com/) is a graphic user interface platform that hosts Git repositories
+    -   repos are used to store project files
 -   advantages:
-    -   isolate *your* changes from main codebase
-    -   code management
+    -   code management: isolate *your* changes from main codebase
     -   project management
     -   collaboration
     -   transparent, helps see *everything*
@@ -122,8 +124,9 @@ lightbox: true
 ::: notes
 -   what is GitHub?
 -   GitHub is a graphic user interface platform that hosts your Git repository, or Git Projects, online
--   It allows people to share, review, and contribute to each other's projects
--   the figure on the right shows a Git repository or "repo". Each team member can make a clone, or copy, of the repo and work on *local* changes to the code
+    -   It allows people to share, review, and contribute to each other's projects/repositories
+        -   a repository, or "repo" is a place to store your project files
+        -   the figure on the right shows a Git repository or "repo". Each team member can make a clone, or copy, of the repo and work on *local* changes to the code
 -   the main advantages of using GitHub are:
     -   it facilitates isolating your specific changes from the main codebase which allows for easier code management
     -   It supports project management through issue tracking
@@ -171,11 +174,11 @@ Features:
 :::
 
 ::: notes
-GitHub helps manage code through transparency and structure, which is extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features that support code management are:
+GitHub helps manage code through transparency and structure, which are extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features GitHub has to support code management are:
 
--   **Version history, which is tracked through commits.** Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when.
+-   **Version history, which is tracked through commits.** Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when. In this screenshot, we are looking at the change between a previous version of the script (on the left) and an updated version (on the right). It highlights exactly what has changed in the file. The user here has replaced the password so that it's not stored in in their script anymore.
 
-    -   version history also enables **change attribution**. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind changes when you revisit projects weeks and months later.
+    -   version history also enables **change attribution**. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind code edits when you revisit projects weeks or months later.
 
     -   version history also gives you the power of **time travel**. If something in your codebase were to break, or you needed to undo a change, you can easily roll back to previous versions. Everything is stored in a centralized place, so there's no need to go digging through your personal files or files on the Y drive.
 
@@ -204,18 +207,18 @@ Features:
 ::: notes
 Beyond managing code, GitHub also has some tools for managing projects. Some features worth highlighting:
 
--   First, we have **issues**. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase. There's a screenshot on the right of an issues page.
+-   **issues**. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase.
     -   As part of issues, Github has **labels and assignees**. Labels help categorize work. My team will use these to define enhancements, priority items, documentation fixes, etc. And you can assign issues to specific team members so it's clear who is responsible for what. In this screenshot, we have a few issues with descriptive titles. In the bubbles to the right, are labels to help categorize issues. At the far right, you can see the user which has been assigned this task.
-    -   Issues are well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.
+    -   so Issues are very well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.
 -   Lastly, there's also the ability to group issues together in **milestones** so you can track progress toward larger goals, like creating a new report or publishing a new dashboard.
 
 If you've used tools ike Smartsheet, GitHub's project board also offers some similar way to track project milestones there.
 
-Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates.
+Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates. I'm going to show quick example of an issue that Frank and I used to create this presentation. This is the issues page and we have 2 issues. Issue #2 todo was created by Frank and he assigned it to himself. In here, we've been communicating and tracking idea for this presentation. You can see on the right that we're able to assign other users, create labels, attach the issue to a specific project or milestone. So I find issues extremely useful for assigning projects and keeping track of them.
 :::
 ::::::
 
-## benefits of Git - collaboration
+## benefits of GitHub - collaboration
 
 :::::: columns
 ::: {.column .incremental}
@@ -225,6 +228,7 @@ Features
 -   **pull requests:** enable code review and discussion
     -   **comment & review:** clear contextual communication history
 -   **sharing code**: easily share and control access to your code
+    -   organizations, private/public repos
 :::
 
 ::: column
@@ -232,15 +236,15 @@ Features
 :::
 
 ::: notes
-One of GitHub's biggest strengths is how it support collaboration through the entire workflow.
+One of GitHub's biggest strengths is how it supports collaboration through the entire workflow.
 
 -   I've already mentioned this, but it's worth repeating, **branches** let team members work on different tasks, at the same time, without conflict. I might be updating and reviewing code to include eCR labs in our reporting scripts, while somebody else is working on adding a new QA table to our email reports. We can both work in parallel, while our main codebase remains stable.
 
--   Once a task is ready, we use **pull requests** to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase. I've found this particularly useful when onboarding new team members
+-   Once a task is ready, we use **pull requests** to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase.
 
 -   Within the pull request, users can **comment & review.** I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You're even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.
 
--   Very importantly, GitHub makes **sharing code** extremely simple. Admins are able to control who can see, and who can edit code through public and private repositories. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
+-   Very importantly, GitHub makes **sharing code** extremely simple. Admins are able to control who can see, and who can edit code through the use of organizations, public repos, and private repos which I'll cover a bit more later.
 
 Personally, I’ve found pull requests and code reviews incredibly useful for onboarding new users. They help me track whether all requested features were added, and if someone is coding in a language they’re still learning, I can provide targeted, helpful feedback while documenting their updates in an easily reviewable way.
 :::
@@ -249,9 +253,34 @@ Personally, I’ve found pull requests and code reviews incredibly useful for on
 ## what do we use it for
 
 -   all code development
--   single 'one-off' scripts
--   big collaborative projects
--   whenever we need to share code
+    -   surveillance pipelines
+    -   single 'one-off' scripts
+-   large collaborative organizations to share code
+    -   public repos: share code broadly or collaborate with external partners
+    -   private repos: restricted access for sensitive internal work
+    -   organizations: WA-EIP, NW-PaGe
+
+::: notes
+How does our team, DIQA, use git and GitHub?
+
+-   It is one of our primary tools and we use it for all code development.
+
+-   This includes our major surveillance pipelines which extract, transform, and load surveillance data for routine reporting, but also includes simpler "one-off" analysis scripts or troubleshooting code.
+
+-   an important aspect of our work is cross-team collaboration, especialy with other epi teams and program parners. To support that, we've created large collaborative GitHub organizations to share our code and contribute to projects in a centralized location.
+
+    -   In Github, an organization is a shared workspace where multiple related projects can live under one umbrella. Within an organization, we can create multiple repos, each one dedicated to a specific project. This helps us keep repos organized and separate, so it’s easier to find what you need and collaborate within focused groups.
+
+    -   Organizations also let us manage access carefully. We can have private and public repos. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.
+
+    -   We recently set up the WA-Emerging Infections Program (WA-EIP) organization. The goal is to house all EIP-related work, including both the **RESP-NET** repositories and the **MPOX vaccination study** repos.
+
+        -   For RESP-NET specifically, our long-term goal is to maintain both private repos for collaboration with internal teams (RHINO, Data Engineering, etc.) and with LHJ partners while also building out public-facing repos where we can share scripts with other RESP-NET sites and the CDC.
+
+    -   We’re also building on lessons learned from the **Northwest Pathogen Genomics Center of Excellence** organization, which Frank stood up. That space is used to collaborate across the molecular epi team, DIQA, and external academic partners.
+
+Now that I've shared a high-level overview of all the benefits of git and github and how DIQA uses it, I'm going to hand it over to Frank who will demo how to actually use these tools in practice.
+:::
 
 ## how to use Git/GitHub in practice
 
