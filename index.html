@@ -13,7 +13,7 @@
 <link href="index_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="author" content="Frank Aragona &amp; Juan Salazar">
+  <meta name="author" content="Frank Aragona &amp; Juan Salazar, DIQA">
   <title>Intro to Git and GitHub </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -204,7 +204,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Frank Aragona &amp; Juan Salazar 
+Frank Aragona &amp; Juan Salazar, DIQA 
 </div>
 </div>
 </div>
@@ -287,12 +287,13 @@ Frank Aragona &amp; Juan Salazar
 <li><p>Major advantages of this:</p>
 <ul>
 <li><p>It allows you to create new branches to test code before you implement it.</p></li>
-<li><p>Users can isolate new branches from your main branch to keep it clean and running until you are able to safely launch updates</p></li>
+<li><p>Users can isolate new branches from your main branch to keep the main branch clean and running until you are able to safely launch updates</p></li>
 <li><p>It lets you see the entire history of your code base through really well-documented version-tracking</p></li>
 <li><p>It prevents accidental overwrites of your code</p></li>
 </ul>
 <p>For example, for the RESP-NET project my team has our main production branch that creates a weekly analytic file which we share with the CDC. However, we are constantly making improvements. If somebody on our team wants to update our code to report a new racial category, like <strong>Middle-Eastern or North African (MENA)</strong>, we don’t want that user to make those changes directly in our *main* code until they have been thoroughly tested. So they would create a new branch off of main, make the necessary updates, and then merge them back into main once they’re ready. Git lets you do this, seamlessly.</p></li>
 </ul>
+<p>But to effectively use git, you also need to use a git management tool. And the most popular tool to use is GitHub.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -311,11 +312,13 @@ Frank Aragona &amp; Juan Salazar
 <div class="column">
 <div>
 <ul>
-<li class="fragment"><a href="https://github.com/">GitHub</a> is a graphic user interface platform that hosts Git repositories</li>
+<li class="fragment"><a href="https://github.com/">GitHub</a> is a graphic user interface platform that hosts Git repositories
+<ul>
+<li class="fragment">repos are used to store project files</li>
+</ul></li>
 <li class="fragment">advantages:
 <ul>
-<li class="fragment">isolate <em>your</em> changes from main codebase</li>
-<li class="fragment">code management</li>
+<li class="fragment">code management: isolate <em>your</em> changes from main codebase</li>
 <li class="fragment">project management</li>
 <li class="fragment">collaboration</li>
 <li class="fragment">transparent, helps see <em>everything</em></li>
@@ -328,9 +331,14 @@ Frank Aragona &amp; Juan Salazar
 <aside class="notes">
 <ul>
 <li>what is GitHub?</li>
-<li>GitHub is a graphic user interface platform that hosts your Git repository, or Git Projects, online</li>
-<li>It allows people to share, review, and contribute to each other’s projects</li>
+<li>GitHub is a graphic user interface platform that hosts your Git repository, or Git Projects, online
+<ul>
+<li>It allows people to share, review, and contribute to each other’s projects/repositories
+<ul>
+<li>a repository, or “repo” is a place to store your project files</li>
 <li>the figure on the right shows a Git repository or “repo”. Each team member can make a clone, or copy, of the repo and work on <em>local</em> changes to the code</li>
+</ul></li>
+</ul></li>
 <li>the main advantages of using GitHub are:
 <ul>
 <li>it facilitates isolating your specific changes from the main codebase which allows for easier code management</li>
@@ -397,11 +405,11 @@ Frank Aragona &amp; Juan Salazar
 </div><div class="column">
 <p><a href="images/code_change.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/code_change.png"></a></p>
 </div><aside class="notes">
-<p>GitHub helps manage code through transparency and structure, which is extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features that support code management are:</p>
+<p>GitHub helps manage code through transparency and structure, which are extremely important when there are multiple stakeholders contributing to your codebase or when your team is trying to create reproducible data. Some of the features GitHub has to support code management are:</p>
 <ul>
-<li><p><strong>Version history, which is tracked through commits.</strong> Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when.</p>
+<li><p><strong>Version history, which is tracked through commits.</strong> Every time a user makes a change, GitHub creates a snapshot of your code so you can go back and see what changed and when. In this screenshot, we are looking at the change between a previous version of the script (on the left) and an updated version (on the right). It highlights exactly what has changed in the file. The user here has replaced the password so that it’s not stored in in their script anymore.</p>
 <ul>
-<li><p>version history also enables <strong>change attribution</strong>. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind changes when you revisit projects weeks and months later.</p></li>
+<li><p>version history also enables <strong>change attribution</strong>. Every commit is tied to a person and a message describing what they did. You can see what user added or deleted code and why they did it. This is really helpful to understand and remember the context behind code edits when you revisit projects weeks or months later.</p></li>
 <li><p>version history also gives you the power of <strong>time travel</strong>. If something in your codebase were to break, or you needed to undo a change, you can easily roll back to previous versions. Everything is stored in a centralized place, so there’s no need to go digging through your personal files or files on the Y drive.</p></li>
 </ul></li>
 <li><p>Finally, GitHub encourages <strong>structured repositories</strong> as a means to organize scripts and documentation consistently. It also let you clearly separate production-ready code from work that is still in development. And you can use folders or repos to separate different projects.</p></li>
@@ -438,15 +446,15 @@ Frank Aragona &amp; Juan Salazar
 </div><aside class="notes">
 <p>Beyond managing code, GitHub also has some tools for managing projects. Some features worth highlighting:</p>
 <ul>
-<li>First, we have <strong>issues</strong>. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase. There’s a screenshot on the right of an issues page.
+<li><strong>issues</strong>. These are like tasks or to-do items and they can be used to track tasks, document decisions, track bugs in your code, or request enhancements/new features for your codebase.
 <ul>
 <li>As part of issues, Github has <strong>labels and assignees</strong>. Labels help categorize work. My team will use these to define enhancements, priority items, documentation fixes, etc. And you can assign issues to specific team members so it’s clear who is responsible for what. In this screenshot, we have a few issues with descriptive titles. In the bubbles to the right, are labels to help categorize issues. At the far right, you can see the user which has been assigned this task.</li>
-<li>Issues are well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.</li>
+<li>so Issues are very well-organized. You can easily search, filter, or tag issues and you can link issues directly to code changes. For example, if my team needed to fix a bug, we can easily connect that fix to the issue it resolves and create a clear history of how the code was updated.</li>
 </ul></li>
 <li>Lastly, there’s also the ability to group issues together in <strong>milestones</strong> so you can track progress toward larger goals, like creating a new report or publishing a new dashboard.</li>
 </ul>
 <p>If you’ve used tools ike Smartsheet, GitHub’s project board also offers some similar way to track project milestones there.</p>
-<p>Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates.</p>
+<p>Overall, GitHub has some useful tools to facilitate project management. My team heavily relies on issues since they live alongside our codebase and can easily grow with the project without us having to manage a separate tracker or spreadsheet for codebase updates. I’m going to show quick example of an issue that Frank and I used to create this presentation. This is the issues page and we have 2 issues. Issue #2 todo was created by Frank and he assigned it to himself. In here, we’ve been communicating and tracking idea for this presentation. You can see on the right that we’re able to assign other users, create labels, attach the issue to a specific project or milestone. So I find issues extremely useful for assigning projects and keeping track of them.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -460,8 +468,8 @@ Frank Aragona &amp; Juan Salazar
       }</style></aside>
 </div>
 </section>
-<section id="benefits-of-git---collaboration" class="slide level2">
-<h2>benefits of Git - collaboration</h2>
+<section id="benefits-of-github---collaboration" class="slide level2">
+<h2>benefits of GitHub - collaboration</h2>
 <div class="columns">
 <div class="column">
 <p>Features</p>
@@ -471,17 +479,23 @@ Frank Aragona &amp; Juan Salazar
 <ul>
 <li class="fragment"><strong>comment &amp; review:</strong> clear contextual communication history</li>
 </ul></li>
-<li class="fragment"><strong>sharing code</strong>: easily share and control access to your code</li>
+<li class="fragment"><strong>sharing code</strong>: easily share and control access to your code
+<ul>
+<li class="fragment">organizations, private/public repos</li>
+</ul></li>
 </ul>
 </div><div class="column">
-<p><a href="images/code_change.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/code_change.png"></a></p>
+<p><a href="images/code_review.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/code_review.png"></a></p>
 </div><aside class="notes">
-<p>One of GitHub’s biggest strengths is how it support collaboration through the entire workflow.</p>
+<p>One of GitHub’s biggest strengths is how it supports collaboration through the entire workflow.</p>
 <ul>
 <li><p>I’ve already mentioned this, but it’s worth repeating, <strong>branches</strong> let team members work on different tasks, at the same time, without conflict. I might be updating and reviewing code to include eCR labs in our reporting scripts, while somebody else is working on adding a new QA table to our email reports. We can both work in parallel, while our main codebase remains stable.</p></li>
-<li><p>Once a task is ready, we use <strong>pull requests</strong> to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase. I’ve found this particularly useful when onboarding new team members</p></li>
-<li><p>Within the pull request, users can <strong>comment &amp; review.</strong> I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You’re even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.</p></li>
-<li><p>Very importantly, GitHub makes <strong>sharing code</strong> extremely simple. Admins are able to control who can see, and who can edit code through public and private repositories. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.</p></li>
+<li><p>Once a task is ready, we use <strong>pull requests</strong> to propose the update. This gives teams a chance to review the code, discuss it, and even request edits before anything gets merged into the main codebase.</p></li>
+<li><p>Within the pull request, users can <strong>comment &amp; review.</strong> I use this with my team to ask questions, leave feedback, or tag other collaborators for their input. You’re even able to highlight specific lines of code that you think may need further review. Everything is neatly saved, and organized and easy to revisit later.</p>
+<ul>
+<li>In this screenshot, a teammate asked me to review their code. I found a small issue, requested a change, and left a comment with my suggested fix. GitHub makes it really simple to track those updates. So now I can see specifically what my team member updated since the previous review - he also left a comment with a description. and it’s really easy to grant final approval once everything’s ready to merge into the main codebase.</li>
+</ul></li>
+<li><p>Very importantly, GitHub makes <strong>sharing code</strong> extremely simple. Admins are able to control who can see, and who can edit code through the use of organizations, public repos, and private repos which I’ll cover a bit more later.</p></li>
 </ul>
 <p>Personally, I’ve found pull requests and code reviews incredibly useful for onboarding new users. They help me track whether all requested features were added, and if someone is coding in a language they’re still learning, I can provide targeted, helpful feedback while documenting their updates in an easily reviewable way.</p>
 <style type="text/css">
@@ -500,11 +514,46 @@ Frank Aragona &amp; Juan Salazar
 <section id="what-do-we-use-it-for" class="slide level2">
 <h2>what do we use it for</h2>
 <ul>
-<li>all code development</li>
+<li>all code development
+<ul>
+<li>surveillance pipelines</li>
 <li>single ‘one-off’ scripts</li>
-<li>big collaborative projects</li>
-<li>whenever we need to share code</li>
+</ul></li>
+<li>large collaborative organizations to share code
+<ul>
+<li>public repos: share code broadly or collaborate with external partners</li>
+<li>private repos: restricted access for sensitive internal work</li>
+<li>organizations: WA-EIP, NW-PaGe</li>
+</ul></li>
 </ul>
+<aside class="notes">
+<p>How does our team, DIQA, use git and GitHub?</p>
+<ul>
+<li><p>It is one of our primary tools and we use it for all code development.</p></li>
+<li><p>This includes our major surveillance pipelines which extract, transform, and load surveillance data for routine reporting, but also includes simpler “one-off” analysis scripts or troubleshooting code.</p></li>
+<li><p>an important aspect of our work is cross-team collaboration, especialy with other epi teams and program parners. To support that, we’ve created large collaborative GitHub organizations to share our code and contribute to projects in a centralized location.</p>
+<ul>
+<li><p>In Github, an organization is a shared workspace where multiple related projects can live under one umbrella. Within an organization, we can create multiple repos, each one dedicated to a specific project. This helps us keep repos organized and separate, so it’s easier to find what you need and collaborate within focused groups.</p></li>
+<li><p>Organizations also let us manage access carefully. We can have private and public repos within a single org. Public repos are open to anyone, which is great for sharing code broadly or collaborating with external partners. Private repos restrict access to invited team members or members from your organization, which is ideal for sensitive internal work.</p></li>
+<li><p>We recently set up the WA-Emerging Infections Program (WA-EIP) organization. The goal is to house all EIP-related work, including both the <strong>RESP-NET</strong> repositories and the <strong>MPOX vaccination study</strong> repos.</p>
+<ul>
+<li>For RESP-NET specifically, our long-term goal is to maintain both private repos for collaboration with internal teams (RHINO, Data Engineering, etc.) and with LHJ partners while also building out public-facing repos where we can share scripts with other RESP-NET sites and the CDC.</li>
+</ul></li>
+<li><p>We’re also building on lessons learned from the <strong>Northwest Pathogen Genomics Center of Excellence</strong> organization, which Frank stood up. That space is used to collaborate across the molecular epi team, DIQA, and external academic partners.</p></li>
+</ul></li>
+</ul>
+<p>Now that I’ve shared a high-level overview of all the benefits of git and github and how DIQA uses it, I’m going to hand it over to Frank who will demo how to actually use these tools in practice.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-to-use-gitgithub-in-practice" class="slide level2">
 <h2>how to use Git/GitHub in practice</h2>
@@ -605,14 +654,14 @@ Frank Aragona &amp; Juan Salazar
 <h2></h2>
 <div class="layout-sidebar layout-sidebar-left">
 <div class="cell panel-sidebar">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="345" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 344;"><span id="cb1-345"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
-<span id="cb1-346"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
-<span id="cb1-347"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
-<span id="cb1-348"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
-<span id="cb1-349"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb1-350"><a href=""></a> ]<span class="op">,</span></span>
-<span id="cb1-351"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
-<span id="cb1-352"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="376" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 375;"><span id="cb1-376"><a href=""></a>viewof scan <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>([</span>
+<span id="cb1-377"><a href=""></a>        [<span class="st">"Base Timeline"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb1-378"><a href=""></a>        [<span class="st">"Top Language"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb1-379"><a href=""></a>        [<span class="st">"Top 5 Repos"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb1-380"><a href=""></a>        [<span class="st">"Size"</span><span class="op">,</span> value <span class="kw">=&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb1-381"><a href=""></a> ]<span class="op">,</span></span>
+<span id="cb1-382"><a href=""></a>        {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Click Plot Type:"</span>}</span>
+<span id="cb1-383"><a href=""></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
